@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bydnj8ee4afqv"]
+
+[ext_resource type="Script" uid="uid://6xvrivcyowlg" path="res://scripts/damage_module.gd" id="1_uqx2v"]
+
+[node name="Damage_Module" type="Node"]
+script = ExtResource("1_uqx2v")

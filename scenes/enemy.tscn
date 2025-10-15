@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://x52rj0ldlp3s"]
+
+[ext_resource type="Texture2D" uid="uid://bnp4php585saq" path="res://assets/enemy.png" id="1_7p1mj"]
+[ext_resource type="Script" uid="uid://b6yirkhd5bcpl" path="res://scripts/enemy.gd" id="1_md0e3"]
+[ext_resource type="PackedScene" uid="uid://d0ke1wc1edk0x" path="res://scenes/team.tscn" id="3_4ra3w"]
+[ext_resource type="PackedScene" uid="uid://bydnj8ee4afqv" path="res://scenes/damage_module.tscn" id="4_5uy6h"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_md0e3"]
+radius = 8.062258
+
+[node name="Enemy" type="Area2D"]
+collision_layer = 2
+collision_mask = 5
+script = ExtResource("1_md0e3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_7p1mj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_md0e3")
+
+[node name="Team" parent="." instance=ExtResource("3_4ra3w")]
+team_value = "enemy"
+
+[node name="Damage_Module" parent="." instance=ExtResource("4_5uy6h")]
+
+[connection signal="no_hp" from="Damage_Module" to="." method="_on_damage_module_no_hp"]

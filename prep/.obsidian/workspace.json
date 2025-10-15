@@ -1,0 +1,239 @@
+{
+  "main": {
+    "id": "e89506f8b29c1402",
+    "type": "split",
+    "children": [
+      {
+        "id": "d13f40ebab2e2821",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "2c5f2d41134ce2ef",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "arcade_space_shooter.png"
+              },
+              "icon": "lucide-image",
+              "title": "arcade_space_shooter"
+            }
+          },
+          {
+            "id": "c19a2c24f6e5ff36",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "_Enemy_ Checkmate.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "_Enemy_ Checkmate"
+            }
+          },
+          {
+            "id": "60725034567f869c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Weapons.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Weapons"
+            }
+          },
+          {
+            "id": "1f1e358ccfd08037",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Weapons.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Weapons"
+            }
+          },
+          {
+            "id": "eb2b8ea73d28c82b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Ideas.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Ideas"
+            }
+          }
+        ],
+        "currentTab": 4
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "a72c61db77e6af3d",
+    "type": "split",
+    "children": [
+      {
+        "id": "4f72de388d8ae30f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ae6e6dfc3e6a66a0",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "dedae962798c28cd",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "eac0b69bc5a76946",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "c02737ea10bfa12c",
+    "type": "split",
+    "children": [
+      {
+        "id": "335b86f1b1568ea6",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "be402a49ebc1ef86",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Ideas.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for Ideas"
+            }
+          },
+          {
+            "id": "c5cdb8ab7701a653",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Ideas.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from Ideas"
+            }
+          },
+          {
+            "id": "51ddb29150c187c3",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "b89b3873fb353f89",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Ideas.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of Ideas"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
+    }
+  },
+  "active": "eb2b8ea73d28c82b",
+  "lastOpenFiles": [
+    "256Pallet.kra",
+    "Limitations.md",
+    "Weapons.md",
+    "Ideas.md",
+    "_Enemy_ Checkmate.md",
+    "arcade_space_shooter.png",
+    "spacebg.bmp",
+    "spacebg.bmp.import",
+    "16ShipCollection.kra~"
+  ]
+}

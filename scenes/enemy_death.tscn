@@ -1,0 +1,48 @@
+[gd_scene load_steps=8 format=3 uid="uid://dey885ymhv18k"]
+
+[ext_resource type="Texture2D" uid="uid://bwthcnka3ikcv" path="res://assets/explosion.png" id="1_217mc"]
+[ext_resource type="Script" uid="uid://ddn42drftm3qd" path="res://scripts/enemy_death.gd" id="2_5o8jb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m8rpr"]
+atlas = ExtResource("1_217mc")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g20jf"]
+atlas = ExtResource("1_217mc")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pn68g"]
+atlas = ExtResource("1_217mc")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rit5w"]
+atlas = ExtResource("1_217mc")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_butv5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m8rpr")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_g20jf")
+}, {
+"duration": 4.0,
+"texture": SubResource("AtlasTexture_pn68g")
+}, {
+"duration": 6.0,
+"texture": SubResource("AtlasTexture_rit5w")
+}],
+"loop": false,
+"name": &"default",
+"speed": 60.0
+}]
+
+[node name="EnemyDeath" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_butv5")
+frame = 3
+frame_progress = 1.0
+script = ExtResource("2_5o8jb")
+
+[connection signal="animation_finished" from="." to="." method="_on_animation_finished"]

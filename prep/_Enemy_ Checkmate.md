@@ -1,0 +1,1 @@
+Checkmate is an enemy that has retro reflectors for laser defence as well as defending against all other attacks. However the retro reflectors don't cover the entire body making it weak to laser attacks in just specific areas.
