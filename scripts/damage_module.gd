@@ -2,10 +2,19 @@ extends Node
 
 @export var hull_points: float
 @export var armour_points: float
-@export var shield_points: float
+@export var shield_points_init: float
+@export var sp_regen_rate: float
+var shield_points = shield_points_init
 var plasma_hit = preload("res://scenes/plasma_hit.tscn")
 signal no_hp
 
+
+func _process(delta: float) -> void:
+	if shield_points < 0:
+		shield_points = 0
+	shield_points += (sp_regen_rate * delta)
+	if shield_points > shield_points_init:
+		shield_points = shield_points_init
 
 func damage(amount: float, location: Vector2) -> void:
 	var damage_remaining = amount

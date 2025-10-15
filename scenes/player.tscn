@@ -12,8 +12,8 @@ script = ExtResource("1_g2els")
 
 [node name="Damage_Module" parent="." instance=ExtResource("4_dqkch")]
 hull_points = 500.0
-armour_points = 50.0
-shield_points = 10.0
+armour_points = 300.0
+sp_regen_rate = 100.0
 
 [node name="Team" parent="." instance=ExtResource("3_qhqgy")]
 team_value = "player"
