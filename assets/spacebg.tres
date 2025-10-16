@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://cvm0ynvi00rce"]
 
-[ext_resource type="Shader" uid="uid://do0enyluno1u2" path="res://scripts/blackToAlpha.gdshader" id="1_ep5tq"]
+[ext_resource type="Shader" uid="uid://vt14e70hb0jw" path="res://scenes/blackToAlpha.gdshader" id="1_ep5tq"]
 
 [resource]
 shader = ExtResource("1_ep5tq")

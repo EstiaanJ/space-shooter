@@ -1,4 +1,8 @@
 # Art
+- A better plasma shot
+- An enemy 
+- Exhaust animation for player ship
+- Shield
 
 # Gameplay & Engine
 

@@ -1,21 +1,21 @@
-[gd_scene load_steps=7 format=3 uid="uid://mmttt3p1ts17"]
+[gd_scene load_steps=7 format=3 uid="uid://cpefrkryhtaws"]
 
-[ext_resource type="Texture2D" uid="uid://ctv20as7n00ed" path="res://assets/shield2.png" id="1_vtru8"]
+[ext_resource type="Texture2D" uid="uid://ctv20as7n00ed" path="res://assets/shield2.png" id="1_qq4fu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ohv3a"]
-atlas = ExtResource("1_vtru8")
+atlas = ExtResource("1_qq4fu")
 region = Rect2(0, 0, 21, 25)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e3gf5"]
-atlas = ExtResource("1_vtru8")
+atlas = ExtResource("1_qq4fu")
 region = Rect2(21, 0, 21, 25)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gsp1a"]
-atlas = ExtResource("1_vtru8")
+atlas = ExtResource("1_qq4fu")
 region = Rect2(42, 0, 21, 25)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pvu10"]
-atlas = ExtResource("1_vtru8")
+atlas = ExtResource("1_qq4fu")
 region = Rect2(63, 0, 21, 25)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hbtow"]
