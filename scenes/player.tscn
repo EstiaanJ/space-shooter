@@ -10,22 +10,22 @@ collision_mask = 6
 motion_mode = 1
 script = ExtResource("1_g2els")
 
+[node name="Camera2D" type="Camera2D" parent="."]
+limit_enabled = false
+position_smoothing_speed = 50.0
+rotation_smoothing_speed = 50.0
+
 [node name="Damage_Module" parent="." instance=ExtResource("4_dqkch")]
 hull_points = 500.0
 armour_points = 300.0
 sp_regen_rate = 100.0
 
 [node name="Team" parent="." instance=ExtResource("3_qhqgy")]
-team_value = "player"
+team_value = "player_team"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
 texture = ExtResource("2_g2els")
-
-[node name="Camera2D" type="Camera2D" parent="Sprite2D"]
-limit_enabled = false
-position_smoothing_speed = 50.0
-rotation_smoothing_speed = 50.0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(-8, 2, -8, -3, 0, -8, 8, -3, 8, 2, 2, 8, -2, 8)

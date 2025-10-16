@@ -13,12 +13,12 @@ script = ExtResource("1_a7dhc")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(0, -4)
+position = Vector2(0, 6)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_a7dhc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -6)
+position = Vector2(0, 5)
 shape = SubResource("RectangleShape2D_xmihv")
 
 [node name="Timer" type="Timer" parent="."]

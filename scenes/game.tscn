@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://ir8qge0ul3d6"]
+[gd_scene load_steps=6 format=3 uid="uid://ir8qge0ul3d6"]
 
 [ext_resource type="Script" uid="uid://cswo5es3jamcd" path="res://scripts/game.gd" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://b6culji4mri" path="res://scenes/player.tscn" id="2_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://x52rj0ldlp3s" path="res://scenes/enemy.tscn" id="3_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://c3yh310hr47y3" path="res://scenes/parallax_2d.tscn" id="4_lbhrr"]
+
+[sub_resource type="Environment" id="Environment_lbhrr"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_uwrxv")
@@ -26,5 +28,25 @@ position = Vector2(159, 162)
 [node name="EnemySpawnTimer" type="Timer" parent="."]
 wait_time = 5.0
 autostart = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -320.0
+offset_top = -176.0
+offset_right = 304.0
+offset_bottom = 160.0
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 304.0
+offset_top = 192.0
+offset_right = 448.0
+offset_bottom = 219.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_lbhrr")
 
 [connection signal="timeout" from="EnemySpawnTimer" to="." method="_on_enemy_spawn_timer_timeout"]

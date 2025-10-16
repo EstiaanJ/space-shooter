@@ -27,7 +27,7 @@ func _process(delta: float) -> void:
 func _on_player_laser_shot(laser_scene, location, direction):
 	var laser = laser_scene.instantiate()
 	laser.global_position = location
-	laser.initialize(direction,"player_team")  # Pass the rotation to the laser
+	laser.initialize(direction,350,"player_team") 
 	laser_container.add_child(laser)
 
 

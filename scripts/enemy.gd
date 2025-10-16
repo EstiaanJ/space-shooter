@@ -32,7 +32,7 @@ func shoot(aim_point: Vector2):
 	var target_bearing = global_position.angle_to_point(aim_point) + PI/2
 	var shot = laser_scene.instantiate()
 	shot.global_position = global_position
-	shot.initialize(target_bearing,"enemy")
+	shot.initialize(target_bearing,100,"enemy")
 	get_tree().root.get_node("Game").add_child(shot)
 
 func set_target(player_ref):
