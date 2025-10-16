@@ -79,12 +79,14 @@
             "id": "a9b80c610f458c4c",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "arcade_space_shooter.png"
+                "file": "TODO.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-image",
-              "title": "arcade_space_shooter"
+              "icon": "lucide-file",
+              "title": "TODO"
             }
           }
         ],
@@ -238,6 +240,10 @@
   },
   "active": "a9b80c610f458c4c",
   "lastOpenFiles": [
+    "Airburst1.PNG.import",
+    "FullShield1.PNG.import",
+    "FullShield1.PNG",
+    "arcade_space_shooter.png",
     "Airburst1.PNG",
     "Engine1.png.import",
     "player ship sprite sheet.kra~",
@@ -254,15 +260,11 @@
     "pship.png.import1420824022.tmp",
     "256Pallet.png.import1420810859.tmp",
     "Plasmashot1.PNG",
-    "pship.png.import",
     "pship.png",
-    "256Pallet.png",
     "TODO.md",
     "Ideas.md",
     "Limitations.md",
     "Weapons.md",
-    "_Enemy_ Checkmate.md",
-    "arcade_space_shooter.png",
-    "spacebg.bmp"
+    "_Enemy_ Checkmate.md"
   ]
 }
