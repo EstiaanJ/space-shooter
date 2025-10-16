@@ -34,6 +34,7 @@ func _on_player_laser_shot(laser_scene, location, direction):
 
 
 func _on_enemy_spawn_timer_timeout() -> void:
+	return
 	var e = enemy_scenes.pick_random().instantiate()
 	e.global_position = Vector2(randf_range(-100,100),randf_range(-100,100));
 	e.set_target(player)
