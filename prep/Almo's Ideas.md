@@ -13,6 +13,7 @@ Sooner rather than later:
 - Alternate fire like laser, missile or automatic rifle
 - Strafing needs to be nerfed/adjusted so that it only lasts a short time/distance and then has a short cooldown (for example 1 second).
 - Shield regeneration needs to be nerfed/adjusted so that there is a small cooldown before it can start regenerating. You are currently basically impossible to kill. 
+- Add collision, so if you collide with the enemy they take damage and so do you. 
 
 Can happen later:
 - Directional sprites
