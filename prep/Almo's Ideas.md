@@ -6,6 +6,7 @@ Most Important:
 - Timer
 - Faster spawning the longer you survive
 - Damage numbers
+- Enemy drones should use airburst when moving since they move slowly and are a circle 
 
 Sooner rather than later:
 - A dodge/teleport/blink/dash
