@@ -30,3 +30,4 @@ Wild Ideas:
 - Different maps/sectors/solar systems/galaxies that you can go to with different enemies and/or factions.
 - Environmental features, like planets, space stations, satellites, stars, asteroids, and gravity that you have to deal with. 
 - Different spaceships and pilots with unique abilities. 
+- Enemies drop scrap and the game is split into rounds that require you to kill a certain amount of enemies. When a round ends, you are able to spend your scrap at a shop. 
