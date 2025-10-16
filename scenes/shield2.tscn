@@ -1,32 +1,24 @@
-[gd_scene load_steps=9 format=3 uid="uid://dll2kaismrfdf"]
+[gd_scene load_steps=7 format=3 uid="uid://mmttt3p1ts17"]
 
-[ext_resource type="Texture2D" uid="uid://tloy51l6u1ej" path="res://assets/ShieldHitAnimation1.png" id="1_vtru8"]
+[ext_resource type="Texture2D" uid="uid://ctv20as7n00ed" path="res://assets/shield2.png" id="1_vtru8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ohv3a"]
 atlas = ExtResource("1_vtru8")
-region = Rect2(0, 0, 25, 25)
+region = Rect2(0, 0, 21, 25)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e3gf5"]
 atlas = ExtResource("1_vtru8")
-region = Rect2(25, 0, 25, 25)
+region = Rect2(21, 0, 21, 25)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gsp1a"]
 atlas = ExtResource("1_vtru8")
-region = Rect2(50, 0, 25, 25)
+region = Rect2(42, 0, 21, 25)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pvu10"]
 atlas = ExtResource("1_vtru8")
-region = Rect2(75, 0, 25, 25)
+region = Rect2(63, 0, 21, 25)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_hbtow"]
-atlas = ExtResource("1_vtru8")
-region = Rect2(100, 0, 25, 25)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_tf5mt"]
-atlas = ExtResource("1_vtru8")
-region = Rect2(125, 0, 25, 25)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_xnywj"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_hbtow"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -40,21 +32,15 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_pvu10")
-}, {
-"duration": 2.0,
-"texture": SubResource("AtlasTexture_hbtow")
-}, {
-"duration": 2.0,
-"texture": SubResource("AtlasTexture_tf5mt")
 }],
 "loop": false,
 "name": &"default",
-"speed": 60.0
+"speed": 5.0
 }]
 
 [node name="Shield" type="Node2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_xnywj")
-frame = 5
+sprite_frames = SubResource("SpriteFrames_hbtow")
+frame = 3
 frame_progress = 1.0

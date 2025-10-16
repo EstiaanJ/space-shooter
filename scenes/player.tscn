@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://b6culji4mri"]
+[gd_scene load_steps=6 format=3 uid="uid://b6culji4mri"]
 
 [ext_resource type="Script" uid="uid://b4npd2by41okh" path="res://scripts/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://c7yr6jm2p4rse" path="res://assets/pship1.PNG" id="2_g2els"]
 [ext_resource type="PackedScene" uid="uid://d0ke1wc1edk0x" path="res://scenes/team.tscn" id="3_qhqgy"]
 [ext_resource type="PackedScene" uid="uid://bydnj8ee4afqv" path="res://scenes/damage_module.tscn" id="4_dqkch"]
+[ext_resource type="PackedScene" uid="uid://dll2kaismrfdf" path="res://scenes/shield.tscn" id="5_qlg0r"]
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 collision_mask = 6
@@ -32,5 +33,7 @@ polygon = PackedVector2Array(-8, 2, -8, -3, 0, -8, 8, -3, 8, 2, 2, 8, -2, 8)
 
 [node name="Muzzle" type="Marker2D" parent="."]
 position = Vector2(0, -11)
+
+[node name="Shield" parent="." instance=ExtResource("5_qlg0r")]
 
 [connection signal="no_hp" from="Damage_Module" to="." method="_on_damage_module_no_hp"]
