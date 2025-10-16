@@ -15,8 +15,7 @@ var shoot_cd := false
 
 signal laser_shot(laser_scene, location, rotation)
 
-func _ready():
-	playback = animation_tree["parameters/playback"]
+
 
 
 func _process(delta):
@@ -47,16 +46,7 @@ func _physics_process(delta: float) -> void:
 	if velocity.length() > max_speed:
 		velocity = velocity.normalized() * max_speed
 	move_and_slide()
-	select_animation()
-	update_sprite_dir(rotation)
 
-func select_animation() -> void:
-	playback.travel("BlendSpace2D")
-
-func update_sprite_dir(rot: float) -> void:
-	var dirVec: Vector2 = Vector2.from_angle(-(rot - PI/2)).normalized()
-	print(dirVec)
-	animation_tree["parameters/BlendSpace2D/blend_position"] = dirVec
 
 
 
