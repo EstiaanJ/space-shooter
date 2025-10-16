@@ -238,6 +238,12 @@
   },
   "active": "a9b80c610f458c4c",
   "lastOpenFiles": [
+    "Engine1.png.import",
+    "player ship sprite sheet.kra~",
+    "player ship sprite sheet.kra",
+    "Engine1.png",
+    "EngineAnimation1.PNG.import",
+    "EngineAnimation1.PNG",
     "EnemyDrone.PNG.import",
     "EnemyDrone.PNG",
     "EnemyShip.PNG",
@@ -253,14 +259,10 @@
     "256Pallet.png",
     "TODO.md",
     "Ideas.md",
-    "shield.kra",
-    "256Pallet.kra",
     "Limitations.md",
     "Weapons.md",
     "_Enemy_ Checkmate.md",
     "arcade_space_shooter.png",
-    "spacebg.bmp",
-    "spacebg.bmp.import",
-    "16ShipCollection.kra~"
+    "spacebg.bmp"
   ]
 }
