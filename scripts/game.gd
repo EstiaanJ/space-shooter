@@ -11,6 +11,9 @@ extends Node2D
 @onready var hp_bar = $CanvasLayer/Control/HPBar
 @onready var sp_bar = $CanvasLayer/Control/SPBar
 @onready var ap_bar = $CanvasLayer/Control/APBar
+@onready var enemy_count_label = $CanvasLayer/Control/EnemyCnt
+@onready var time_score = $CanvasLayer/Control/TimeScore
+var enemy_count = 0
 #var player = null
 
 func _ready():
@@ -21,6 +24,9 @@ func _ready():
 
 
 func _process(delta: float) -> void:
+	enemy_count = enemy_container.get_child_count()
+	enemy_count_label.text = "Enemies: " + str(enemy_count)
+	time_score.text = "Time: " + str(float(Time.get_ticks_msec()/1000.0))
 	update_player_health()
 	if Input.is_action_just_pressed("quit"):
 		get_tree().quit()
@@ -56,4 +62,8 @@ func _on_enemy_spawn_timer_timeout() -> void:
 
 
 func _on_player_end_game() -> void:
-	get_tree().reload_current_scene()
+	var death_time = Time.get_ticks_msec()
+	time_score = death_time
+	enemy_count = "Game Over"
+	get_tree().paused = true
+	#get_tree().reload_current_scene()

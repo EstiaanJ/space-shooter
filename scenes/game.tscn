@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://ir8qge0ul3d6"]
+[gd_scene load_steps=22 format=3 uid="uid://ir8qge0ul3d6"]
 
 [ext_resource type="Script" uid="uid://cswo5es3jamcd" path="res://scripts/game.gd" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://b6culji4mri" path="res://scenes/player.tscn" id="2_yqjtg"]
@@ -7,6 +7,7 @@
 [ext_resource type="FontFile" uid="uid://b40kr5idpstug" path="res://assets/PixeloidSans.otf" id="5_iywne"]
 [ext_resource type="Script" uid="uid://b1fgkulymv6hy" path="res://scripts/enemy_spawn_timer.gd" id="5_u5sy4"]
 [ext_resource type="FontFile" uid="uid://hh1vy426mfr1" path="res://assets/TeenyTinyPixls-o2zo.ttf" id="7_gee14"]
+[ext_resource type="FontFile" uid="uid://24ehjnfan3yf" path="res://assets/GelatinTTF.ttf" id="8_gee14"]
 
 [sub_resource type="Theme" id="Theme_lbhrr"]
 default_font = ExtResource("5_iywne")
@@ -53,6 +54,12 @@ ProgressBar/styles/fill = SubResource("StyleBoxFlat_0tnpc")
 [sub_resource type="LabelSettings" id="LabelSettings_vtaks"]
 font = ExtResource("7_gee14")
 font_size = 5
+
+[sub_resource type="LabelSettings" id="LabelSettings_0tnpc"]
+font = ExtResource("8_gee14")
+
+[sub_resource type="LabelSettings" id="LabelSettings_kvpfn"]
+font = ExtResource("8_gee14")
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_uwrxv")
@@ -139,6 +146,26 @@ offset_right = 13.0
 offset_bottom = 25.0
 text = "SP"
 label_settings = SubResource("LabelSettings_vtaks")
+
+[node name="EnemyCnt" type="Label" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 436.0
+offset_top = 2.0
+offset_right = 636.0
+offset_bottom = 22.0
+text = "Enemies:"
+label_settings = SubResource("LabelSettings_0tnpc")
+horizontal_alignment = 2
+
+[node name="TimeScore" type="Label" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 436.0
+offset_top = 15.0
+offset_right = 636.0
+offset_bottom = 35.0
+text = "Kills:"
+label_settings = SubResource("LabelSettings_kvpfn")
+horizontal_alignment = 2
 
 [connection signal="end_game" from="Player" to="." method="_on_player_end_game"]
 [connection signal="timeout" from="EnemySpawnTimer" to="." method="_on_enemy_spawn_timer_timeout"]
