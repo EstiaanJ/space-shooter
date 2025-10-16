@@ -8,7 +8,7 @@ Most Important:
 - Damage numbers
 
 Sooner rather than later:
-- A dodge/teleport/bling/dash
+- A dodge/teleport/blink/dash
 - Radar/map/warning system
 - Alternate fire like laser, missile or automatic rifle
 
