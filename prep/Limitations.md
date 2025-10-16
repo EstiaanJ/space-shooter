@@ -29,4 +29,4 @@ Saw, Triangle, PWM & Sine
 2 White Noise channels
 1 Delay
 
-# 4 Channel Sampler (No FX)
+# 2 Channel Sampler (No FX)

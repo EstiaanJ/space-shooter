@@ -10,7 +10,8 @@ extends Node
 @onready var armour_points = max_armour_points
 var plasma_hit = preload("res://scenes/plasma_hit.tscn")
 signal no_hp
-
+signal damage_taken
+signal shield_hit
 
 
 func _process(delta: float) -> void:
@@ -26,6 +27,8 @@ func damage(amount: float, location: Vector2) -> void:
 	var ap_damage = 0
 	var hp_damage = 0
 	
+	if shield_points > 0:
+		shield_hit.emit()
 	sp_damage = damage_remaining
 	damage_remaining = damage_remaining - shield_points
 	if damage_remaining > 0:

@@ -7,7 +7,11 @@ extends CharacterBody2D
 @export var drag = 0.95            # Air resistance (0.95 = more drag, 0.99 = less drag)
 
 @onready var muzzle = $Muzzle 
+@onready var shield_col = $ShieldCollider
+@onready var damage_module = $Damage_Module
+@onready var shield_rad = shield_col.shape.radius
 
+var shield_scene = preload("res://scenes/shield.tscn")
 var laser_scene = preload("res://scenes/laser.tscn")
 var shoot_cd := false
 
@@ -17,6 +21,10 @@ signal end_game
 
 
 func _process(delta):
+	if damage_module.shield_points <= 0:
+		shield_col.shape.radius = 0
+	else:
+		shield_col.shape.radius = shield_rad
 	if Input.is_action_pressed("shoot"):
 		if !shoot_cd:
 			shoot_cd = true
@@ -26,7 +34,6 @@ func _process(delta):
 
 func shoot():  
 	laser_shot.emit(laser_scene,muzzle.global_position,rotation)
-	
 
 
 func _physics_process(delta: float) -> void:
@@ -46,7 +53,10 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 
-
-
 func _on_damage_module_no_hp() -> void:
 	end_game.emit()
+
+
+func _on_damage_module_shield_hit() -> void:
+	var shield = shield_scene.instantiate()
+	add_child(shield)

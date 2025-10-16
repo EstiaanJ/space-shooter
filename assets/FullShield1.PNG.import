@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://btgm4op4pelos"
-path="res://.godot/imported/FullShield1.PNG-838c59a9cd6a23cf3bae287b8f62c161.ctex"
+path="res://.godot/imported/FullShield1.PNG-a112c35810a1d1fb82327b8304b062e9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://prep/FullShield1.PNG"
-dest_files=["res://.godot/imported/FullShield1.PNG-838c59a9cd6a23cf3bae287b8f62c161.ctex"]
+source_file="res://assets/FullShield1.PNG"
+dest_files=["res://.godot/imported/FullShield1.PNG-a112c35810a1d1fb82327b8304b062e9.ctex"]
 
 [params]
 

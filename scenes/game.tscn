@@ -1,11 +1,11 @@
-[gd_scene load_steps=18 format=3 uid="uid://ir8qge0ul3d6"]
+[gd_scene load_steps=19 format=3 uid="uid://ir8qge0ul3d6"]
 
 [ext_resource type="Script" uid="uid://cswo5es3jamcd" path="res://scripts/game.gd" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://b6culji4mri" path="res://scenes/player.tscn" id="2_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://x52rj0ldlp3s" path="res://scenes/enemy.tscn" id="3_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://c3yh310hr47y3" path="res://scenes/parallax_2d.tscn" id="4_lbhrr"]
 [ext_resource type="FontFile" uid="uid://b40kr5idpstug" path="res://assets/PixeloidSans.otf" id="5_iywne"]
-[ext_resource type="PackedScene" uid="uid://dwldvh1w1vp3y" path="res://scenes/cool_text.tscn" id="6_p57ef"]
+[ext_resource type="FontFile" uid="uid://hh1vy426mfr1" path="res://assets/TeenyTinyPixls-o2zo.ttf" id="7_gee14"]
 
 [sub_resource type="Theme" id="Theme_lbhrr"]
 default_font = ExtResource("5_iywne")
@@ -17,7 +17,9 @@ bg_color = Color(0.64705884, 0, 0, 1)
 bg_color = Color(4.042983e-06, 0.7807782, 0.4022618, 1)
 
 [sub_resource type="Theme" id="Theme_iywne"]
-ProgressBar/constants/outline_size = 1
+default_font = ExtResource("7_gee14")
+default_font_size = 5
+ProgressBar/constants/outline_size = 0
 ProgressBar/styles/background = SubResource("StyleBoxFlat_iywne")
 ProgressBar/styles/fill = SubResource("StyleBoxFlat_u5sy4")
 
@@ -28,7 +30,9 @@ bg_color = Color(0.64705884, 0, 0, 1)
 bg_color = Color(0.6507736, 0.58030164, 1, 1)
 
 [sub_resource type="Theme" id="Theme_u5sy4"]
-ProgressBar/constants/outline_size = 1
+default_font = ExtResource("7_gee14")
+default_font_size = 5
+ProgressBar/constants/outline_size = 0
 ProgressBar/styles/background = SubResource("StyleBoxFlat_lbhrr")
 ProgressBar/styles/fill = SubResource("StyleBoxFlat_p57ef")
 
@@ -39,9 +43,15 @@ bg_color = Color(0.64705884, 0, 0, 1)
 bg_color = Color(3.657937e-06, 0.714463, 0.9341203, 1)
 
 [sub_resource type="Theme" id="Theme_vtaks"]
-ProgressBar/constants/outline_size = 1
+default_font = ExtResource("7_gee14")
+default_font_size = 5
+ProgressBar/constants/outline_size = 0
 ProgressBar/styles/background = SubResource("StyleBoxFlat_gee14")
 ProgressBar/styles/fill = SubResource("StyleBoxFlat_0tnpc")
+
+[sub_resource type="LabelSettings" id="LabelSettings_vtaks"]
+font = ExtResource("7_gee14")
+font_size = 5
 
 [sub_resource type="Environment" id="Environment_lbhrr"]
 
@@ -78,39 +88,57 @@ theme = SubResource("Theme_lbhrr")
 
 [node name="HPBar" type="ProgressBar" parent="CanvasLayer/Control"]
 layout_mode = 0
-offset_left = 3.0
-offset_top = 3.0
-offset_right = 105.0
+offset_left = 13.0
+offset_top = 2.0
+offset_right = 115.0
 offset_bottom = 9.0
-scale = Vector2(0.5, 0.5)
 theme = SubResource("Theme_iywne")
 value = 80.0
-show_percentage = false
 
 [node name="APBar" type="ProgressBar" parent="CanvasLayer/Control"]
 layout_mode = 0
-offset_left = 3.0
-offset_top = 7.0
-offset_right = 105.0
-offset_bottom = 13.0
-scale = Vector2(0.5, 0.5)
+offset_left = 13.0
+offset_top = 10.0
+offset_right = 115.0
+offset_bottom = 17.0
 theme = SubResource("Theme_u5sy4")
 value = 80.0
-show_percentage = false
 
 [node name="SPBar" type="ProgressBar" parent="CanvasLayer/Control"]
 layout_mode = 0
-offset_left = 3.0
-offset_top = 11.0
-offset_right = 105.0
-offset_bottom = 17.0
-scale = Vector2(0.5, 0.5)
+offset_left = 13.0
+offset_top = 18.0
+offset_right = 115.0
+offset_bottom = 25.0
 theme = SubResource("Theme_vtaks")
 value = 80.0
-show_percentage = false
 
-[node name="Label" parent="CanvasLayer/Control" instance=ExtResource("6_p57ef")]
+[node name="Label2" type="Label" parent="CanvasLayer/Control"]
 layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 13.0
+offset_bottom = 9.0
+text = "HP"
+label_settings = SubResource("LabelSettings_vtaks")
+
+[node name="Label3" type="Label" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 11.0
+offset_right = 13.0
+offset_bottom = 17.0
+text = "AP"
+label_settings = SubResource("LabelSettings_vtaks")
+
+[node name="Label4" type="Label" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 19.0
+offset_right = 13.0
+offset_bottom = 25.0
+text = "SP"
+label_settings = SubResource("LabelSettings_vtaks")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_lbhrr")
