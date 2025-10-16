@@ -8,7 +8,7 @@
 [sub_resource type="Theme" id="Theme_lbhrr"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iywne"]
-bg_color = Color(0.34781694, 0.34781697, 0.34781682, 1)
+bg_color = Color(0.64705884, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lbhrr"]
 bg_color = Color(0, 0.5686275, 0.22745098, 1)
@@ -28,11 +28,6 @@ enemy_scenes = Array[PackedScene]([ExtResource("3_lbhrr")])
 
 [node name="Player" parent="." instance=ExtResource("2_yqjtg")]
 position = Vector2(160, 129)
-speed = 300
-thrust_power = 600.0
-rotation_speed = 3.0
-max_speed = 200.0
-drag = 0.95
 
 [node name="PlayerSpawnPos" type="Marker2D" parent="."]
 position = Vector2(159, 162)
