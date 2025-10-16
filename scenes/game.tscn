@@ -1,11 +1,14 @@
-[gd_scene load_steps=16 format=3 uid="uid://ir8qge0ul3d6"]
+[gd_scene load_steps=18 format=3 uid="uid://ir8qge0ul3d6"]
 
 [ext_resource type="Script" uid="uid://cswo5es3jamcd" path="res://scripts/game.gd" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://b6culji4mri" path="res://scenes/player.tscn" id="2_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://x52rj0ldlp3s" path="res://scenes/enemy.tscn" id="3_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://c3yh310hr47y3" path="res://scenes/parallax_2d.tscn" id="4_lbhrr"]
+[ext_resource type="FontFile" uid="uid://b40kr5idpstug" path="res://assets/PixeloidSans.otf" id="5_iywne"]
+[ext_resource type="PackedScene" uid="uid://dwldvh1w1vp3y" path="res://scenes/cool_text.tscn" id="6_p57ef"]
 
 [sub_resource type="Theme" id="Theme_lbhrr"]
+default_font = ExtResource("5_iywne")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iywne"]
 bg_color = Color(0.64705884, 0, 0, 1)
@@ -105,6 +108,9 @@ scale = Vector2(0.5, 0.5)
 theme = SubResource("Theme_vtaks")
 value = 80.0
 show_percentage = false
+
+[node name="Label" parent="CanvasLayer/Control" instance=ExtResource("6_p57ef")]
+layout_mode = 0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_lbhrr")
