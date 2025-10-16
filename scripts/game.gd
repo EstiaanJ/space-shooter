@@ -7,9 +7,9 @@ extends Node2D
 @onready var explosion_container = $ExplosionContainer
 @onready var timer = $EnemySpawnTimer
 @onready var enemy_container = $EnemyContainer
-#@onready var player = $Player
-
-var player = null
+@onready var player = $Player
+@onready var hp_bar = $CanvasLayer/Control/ProgressBar
+#var player = null
 
 func _ready():
 	player = get_tree().get_first_node_in_group("player")
@@ -19,6 +19,7 @@ func _ready():
 
 
 func _process(delta: float) -> void:
+	update_player_health()
 	if Input.is_action_just_pressed("quit"):
 		get_tree().quit()
 	elif Input.is_action_just_pressed("reset"):
@@ -30,11 +31,14 @@ func _on_player_laser_shot(laser_scene, location, direction):
 	laser.initialize(direction,350,"player_team") 
 	laser_container.add_child(laser)
 
-
+func update_player_health() -> void:
+	var hp = player.get_node("Damage_Module").hull_points
+	var max_hp = player.get_node("Damage_Module").max_hull_points
+	hp_bar.value = (hp/max_hp)*100
 
 
 func _on_enemy_spawn_timer_timeout() -> void:
-	return
+	#return
 	var e = enemy_scenes.pick_random().instantiate()
 	e.global_position = Vector2(randf_range(-100,100),randf_range(-100,100));
 	e.set_target(player)

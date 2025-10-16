@@ -1,10 +1,12 @@
 extends Node
 
-@export var hull_points: float
+@export var max_hull_points: float
 @export var armour_points: float
 @export var shield_points_init: float
 @export var sp_regen_rate: float
-var shield_points = shield_points_init
+
+@onready var hull_points = max_hull_points
+@onready  var shield_points = shield_points_init
 var plasma_hit = preload("res://scenes/plasma_hit.tscn")
 signal no_hp
 

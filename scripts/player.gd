@@ -5,8 +5,6 @@ extends CharacterBody2D
 @export var rotation_speed = 3.0  # How fast the ship rotates
 @export var max_speed = 200.0     # Maximum velocity
 @export var drag = 0.95            # Air resistance (0.95 = more drag, 0.99 = less drag)
-@export var animation_tree : AnimationTree
-@export var playback : AnimationNodeStateMachinePlayback
 
 @onready var muzzle = $Muzzle 
 
@@ -19,6 +17,7 @@ signal laser_shot(laser_scene, location, rotation)
 
 
 func _process(delta):
+	
 	if Input.is_action_pressed("shoot"):
 		if !shoot_cd:
 			shoot_cd = true

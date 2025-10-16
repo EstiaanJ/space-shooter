@@ -6,11 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://bydnj8ee4afqv" path="res://scenes/damage_module.tscn" id="4_dqkch"]
 [ext_resource type="PackedScene" uid="uid://ifjseepcsyun" path="res://scenes/shield.tscn" id="5_qlg0r"]
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("animation_tree") groups=["player"]]
+[node name="Player" type="CharacterBody2D" groups=["player"]]
 collision_mask = 6
 motion_mode = 1
 script = ExtResource("1_g2els")
-animation_tree = NodePath("")
 
 [node name="testsprite" type="Sprite2D" parent="."]
 visible = false
@@ -26,7 +25,7 @@ position_smoothing_speed = 50.0
 rotation_smoothing_speed = 50.0
 
 [node name="Damage_Module" parent="." instance=ExtResource("4_dqkch")]
-hull_points = 50000.0
+max_hull_points = 500.0
 armour_points = 300.0
 sp_regen_rate = 100.0
 

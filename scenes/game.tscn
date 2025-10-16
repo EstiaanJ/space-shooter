@@ -1,9 +1,22 @@
-[gd_scene load_steps=6 format=3 uid="uid://ir8qge0ul3d6"]
+[gd_scene load_steps=10 format=3 uid="uid://ir8qge0ul3d6"]
 
 [ext_resource type="Script" uid="uid://cswo5es3jamcd" path="res://scripts/game.gd" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://b6culji4mri" path="res://scenes/player.tscn" id="2_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://x52rj0ldlp3s" path="res://scenes/enemy.tscn" id="3_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://c3yh310hr47y3" path="res://scenes/parallax_2d.tscn" id="4_lbhrr"]
+
+[sub_resource type="Theme" id="Theme_lbhrr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iywne"]
+bg_color = Color(0.34781694, 0.34781697, 0.34781682, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lbhrr"]
+bg_color = Color(0, 0.5686275, 0.22745098, 1)
+
+[sub_resource type="Theme" id="Theme_iywne"]
+ProgressBar/constants/outline_size = 1
+ProgressBar/styles/background = SubResource("StyleBoxFlat_iywne")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_lbhrr")
 
 [sub_resource type="Environment" id="Environment_lbhrr"]
 
@@ -15,6 +28,11 @@ enemy_scenes = Array[PackedScene]([ExtResource("3_lbhrr")])
 
 [node name="Player" parent="." instance=ExtResource("2_yqjtg")]
 position = Vector2(160, 129)
+speed = 300
+thrust_power = 600.0
+rotation_speed = 3.0
+max_speed = 200.0
+drag = 0.95
 
 [node name="PlayerSpawnPos" type="Marker2D" parent="."]
 position = Vector2(159, 162)
@@ -34,17 +52,20 @@ autostart = true
 [node name="Control" type="Control" parent="CanvasLayer"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = -320.0
-offset_top = -176.0
-offset_right = 304.0
-offset_bottom = 160.0
+offset_right = 640.0
+offset_bottom = 359.0
+theme = SubResource("Theme_lbhrr")
 
 [node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/Control"]
 layout_mode = 0
-offset_left = 304.0
-offset_top = 192.0
-offset_right = 448.0
-offset_bottom = 219.0
+offset_left = 7.0
+offset_top = 3.0
+offset_right = 109.0
+offset_bottom = 9.0
+scale = Vector2(0.5, 0.5)
+theme = SubResource("Theme_iywne")
+value = 80.0
+show_percentage = false
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_lbhrr")
