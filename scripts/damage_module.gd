@@ -8,6 +8,7 @@ extends Node
 @onready var hull_points = max_hull_points
 @onready var shield_points = max_shield_points
 @onready var armour_points = max_armour_points
+@onready var charge_timer = $ChargeTimer
 var plasma_hit = preload("res://scenes/plasma_hit.tscn")
 signal no_hp
 signal damage_taken
@@ -17,7 +18,8 @@ signal shield_hit
 func _process(delta: float) -> void:
 	if shield_points < 0:
 		shield_points = 0
-	shield_points += (sp_regen_rate * delta)
+	if charge_timer.is_stopped(): 
+		shield_points += (sp_regen_rate * delta)
 	if shield_points > max_shield_points:
 		shield_points = max_shield_points
 
@@ -26,7 +28,7 @@ func damage(amount: float, location: Vector2) -> void:
 	var sp_damage = 0
 	var ap_damage = 0
 	var hp_damage = 0
-	
+	charge_timer.start()
 	if shield_points > 0:
 		shield_hit.emit()
 	sp_damage = damage_remaining

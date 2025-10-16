@@ -1,46 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://cpefrkryhtaws"]
+[gd_scene load_steps=3 format=3 uid="uid://cpefrkryhtaws"]
 
-[ext_resource type="Texture2D" uid="uid://ctv20as7n00ed" path="res://assets/shield2.png" id="1_qq4fu"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ohv3a"]
-atlas = ExtResource("1_qq4fu")
-region = Rect2(0, 0, 21, 25)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_e3gf5"]
-atlas = ExtResource("1_qq4fu")
-region = Rect2(21, 0, 21, 25)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gsp1a"]
-atlas = ExtResource("1_qq4fu")
-region = Rect2(42, 0, 21, 25)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_pvu10"]
-atlas = ExtResource("1_qq4fu")
-region = Rect2(63, 0, 21, 25)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_hbtow"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ohv3a")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_e3gf5")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_gsp1a")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_pvu10")
-}],
-"loop": false,
-"name": &"default",
-"speed": 5.0
-}]
+[ext_resource type="Script" uid="uid://c240l838vkbfp" path="res://scripts/shield.gd" id="1_gwgal"]
+[ext_resource type="Texture2D" uid="uid://btgm4op4pelos" path="res://assets/FullShield1.PNG" id="2_ig3ib"]
 
 [node name="Shield" type="Node2D"]
+script = ExtResource("1_gwgal")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_hbtow")
-frame = 3
-frame_progress = 1.0
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_ig3ib")

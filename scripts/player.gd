@@ -11,7 +11,7 @@ extends CharacterBody2D
 @onready var damage_module = $Damage_Module
 @onready var shield_rad = shield_col.shape.radius
 
-var shield_scene = preload("res://scenes/shield.tscn")
+var shield_scene = preload("res://scenes/shield2.tscn")
 var laser_scene = preload("res://scenes/laser.tscn")
 var shoot_cd := false
 
@@ -60,3 +60,4 @@ func _on_damage_module_no_hp() -> void:
 func _on_damage_module_shield_hit() -> void:
 	var shield = shield_scene.instantiate()
 	add_child(shield)
+	
