@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://x52rj0ldlp3s"]
 
-[ext_resource type="Texture2D" uid="uid://bnp4php585saq" path="res://assets/enemy.png" id="1_7p1mj"]
 [ext_resource type="Script" uid="uid://b6yirkhd5bcpl" path="res://scripts/enemy.gd" id="1_md0e3"]
+[ext_resource type="Texture2D" uid="uid://b3ivv2ha8fcch" path="res://assets/EnemyDrone.PNG" id="2_5uy6h"]
 [ext_resource type="PackedScene" uid="uid://d0ke1wc1edk0x" path="res://scenes/team.tscn" id="3_4ra3w"]
 [ext_resource type="PackedScene" uid="uid://bydnj8ee4afqv" path="res://scenes/damage_module.tscn" id="4_5uy6h"]
 
@@ -15,7 +15,7 @@ script = ExtResource("1_md0e3")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-texture = ExtResource("1_7p1mj")
+texture = ExtResource("2_5uy6h")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_md0e3")
