@@ -24,7 +24,9 @@ Stuff Almo wants to work on:
 - Alternate ship sprites for upgrades
 - Alternate fire sprites
 - Different enemies
+- Unique particle effects. 
 
 Wild Ideas:
 - Different maps/sectors/solar systems/galaxies that you can go to with different enemies and/or factions.
 - Environmental features, like planets, space stations, satellites, stars, asteroids, and gravity that you have to deal with. 
+- Different spaceships and pilots with unique abilities. 
