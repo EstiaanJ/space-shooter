@@ -79,14 +79,12 @@
             "id": "a9b80c610f458c4c",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "TODO.md",
-                "mode": "source",
-                "source": false
+                "file": "arcade_space_shooter.png"
               },
-              "icon": "lucide-file",
-              "title": "TODO"
+              "icon": "lucide-image",
+              "title": "arcade_space_shooter"
             }
           }
         ],
@@ -240,14 +238,16 @@
   },
   "active": "a9b80c610f458c4c",
   "lastOpenFiles": [
+    "Plasmashot1.PNG.import",
+    "pship.png.import1420824022.tmp",
+    "256Pallet.png.import1420810859.tmp",
+    "Plasmashot1.PNG",
     "pship.png.import",
     "pship.png",
-    "IMG_2014.png.import",
     "256Pallet.png.import",
-    "IMG_2014.png",
     "256Pallet.png",
-    "Ideas.md",
     "TODO.md",
+    "Ideas.md",
     "shield.kra",
     "256Pallet.kra",
     "Limitations.md",

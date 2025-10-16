@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bmvoqsfu1l7v6"]
 
 [ext_resource type="Script" uid="uid://douh8gqmu64ej" path="res://scripts/laser.gd" id="1_a7dhc"]
-[ext_resource type="Texture2D" uid="uid://tlnq6p151ipi" path="res://assets/plasma.png" id="2_a7dhc"]
+[ext_resource type="Texture2D" uid="uid://dg60bt4bcyf11" path="res://assets/Plasmashot1.PNG" id="2_a7dhc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xmihv"]
 size = Vector2(4, 12)
