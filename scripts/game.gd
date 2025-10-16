@@ -56,7 +56,7 @@ func update_player_health() -> void:
 func _on_enemy_spawn_timer_timeout() -> void:
 	#return
 	var e = enemy_scenes.pick_random().instantiate()
-	e.global_position = Vector2(randf_range(-500,500),randf_range(-500,500));
+	e.global_position = Vector2(randf_range(-1000,1000),randf_range(-1000,1000));
 	e.set_target(player)
 	enemy_container.add_child(e)
 

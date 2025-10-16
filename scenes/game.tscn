@@ -149,23 +149,22 @@ label_settings = SubResource("LabelSettings_vtaks")
 
 [node name="EnemyCnt" type="Label" parent="CanvasLayer/Control"]
 layout_mode = 0
-offset_left = 436.0
+offset_left = 416.0
 offset_top = 2.0
-offset_right = 636.0
+offset_right = 616.0
 offset_bottom = 22.0
-text = "Enemies:"
+text = "Enemies: 1"
 label_settings = SubResource("LabelSettings_0tnpc")
 horizontal_alignment = 2
 
 [node name="TimeScore" type="Label" parent="CanvasLayer/Control"]
 layout_mode = 0
-offset_left = 436.0
-offset_top = 15.0
+offset_left = 561.0
+offset_top = 12.0
 offset_right = 636.0
-offset_bottom = 35.0
-text = "Kills:"
+offset_bottom = 32.0
+text = "Time:"
 label_settings = SubResource("LabelSettings_kvpfn")
-horizontal_alignment = 2
 
 [connection signal="end_game" from="Player" to="." method="_on_player_end_game"]
 [connection signal="timeout" from="EnemySpawnTimer" to="." method="_on_enemy_spawn_timer_timeout"]
