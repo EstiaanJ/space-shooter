@@ -10,6 +10,9 @@
 collision_mask = 6
 motion_mode = 1
 script = ExtResource("1_g2els")
+thrust_power = 1500.0
+rotation_speed = 4.0
+drag = 0.9
 
 [node name="testsprite" type="Sprite2D" parent="."]
 visible = false
@@ -26,8 +29,9 @@ rotation_smoothing_speed = 50.0
 
 [node name="Damage_Module" parent="." instance=ExtResource("4_dqkch")]
 max_hull_points = 500.0
-armour_points = 300.0
-sp_regen_rate = 100.0
+max_shield_points = 200.0
+max_armour_points = 200.0
+sp_regen_rate = 45.0
 
 [node name="Team" parent="." instance=ExtResource("3_qhqgy")]
 team_value = "player_team"
@@ -43,5 +47,6 @@ polygon = PackedVector2Array(-8, 2, -8, -3, 0, -8, 8, -3, 8, 2, 2, 8, -2, 8)
 position = Vector2(0, -11)
 
 [node name="Shield" parent="." instance=ExtResource("5_qlg0r")]
+visible = false
 
 [connection signal="no_hp" from="Damage_Module" to="." method="_on_damage_module_no_hp"]
