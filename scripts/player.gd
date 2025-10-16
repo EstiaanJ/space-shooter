@@ -5,6 +5,8 @@ extends CharacterBody2D
 @export var rotation_speed = 3.0  # How fast the ship rotates
 @export var max_speed = 200.0     # Maximum velocity
 @export var drag = 0.95            # Air resistance (0.95 = more drag, 0.99 = less drag)
+@export var animation_tree : AnimationTree
+@export var playback : AnimationNodeStateMachinePlayback
 
 @onready var muzzle = $Muzzle 
 
@@ -13,8 +15,8 @@ var shoot_cd := false
 
 signal laser_shot(laser_scene, location, rotation)
 
-#func _ready():
-	#set_notify_transform(false)
+func _ready():
+	playback = animation_tree["parameters/playback"]
 
 
 func _process(delta):
@@ -31,34 +33,31 @@ func shoot():
 
 
 func _physics_process(delta: float) -> void:
-	# Rotation input (left/right)
 	var rotation_input = Input.get_axis("turn_left", "turn_right")
 	rotation += rotation_input * rotation_speed * delta
-	
-	# Forward thrust input
 	var thrust_input = Input.get_axis("move_backward", "move_forward")
-	
 	if thrust_input != 0:
-		# Apply thrust in the direction the ship is facing
 		var thrust_direction = Vector2.UP.rotated(rotation)
 		velocity += thrust_direction * thrust_input * thrust_power * delta
-	
-	# Strafe input (left/right movement)
 	var strafe_input = Input.get_axis("move_left", "move_right")
-	
 	if strafe_input != 0:
-		# Apply strafe thrust perpendicular to facing direction
 		var strafe_direction = Vector2.RIGHT.rotated(rotation)
 		velocity += strafe_direction * strafe_input * thrust_power * delta
-	
-	# Apply drag to simulate space friction
 	velocity *= drag
-	
-	# Clamp to max speed
 	if velocity.length() > max_speed:
 		velocity = velocity.normalized() * max_speed
-	
 	move_and_slide()
+	select_animation()
+	update_sprite_dir(rotation)
+
+func select_animation() -> void:
+	playback.travel("BlendSpace2D")
+
+func update_sprite_dir(rot: float) -> void:
+	var dirVec: Vector2 = Vector2.from_angle(-(rot - PI/2)).normalized()
+	print(dirVec)
+	animation_tree["parameters/BlendSpace2D/blend_position"] = dirVec
+
 
 
 func _on_damage_module_no_hp() -> void:
