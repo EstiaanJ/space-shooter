@@ -109,4 +109,5 @@ show_percentage = false
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_lbhrr")
 
+[connection signal="end_game" from="Player" to="." method="_on_player_end_game"]
 [connection signal="timeout" from="EnemySpawnTimer" to="." method="_on_enemy_spawn_timer_timeout"]

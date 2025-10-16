@@ -12,12 +12,11 @@ var laser_scene = preload("res://scenes/laser.tscn")
 var shoot_cd := false
 
 signal laser_shot(laser_scene, location, rotation)
-
+signal end_game
 
 
 
 func _process(delta):
-	
 	if Input.is_action_pressed("shoot"):
 		if !shoot_cd:
 			shoot_cd = true
@@ -50,4 +49,4 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_damage_module_no_hp() -> void:
-	queue_free()
+	end_game.emit()

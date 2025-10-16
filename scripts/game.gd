@@ -53,3 +53,7 @@ func _on_enemy_spawn_timer_timeout() -> void:
 	e.global_position = Vector2(randf_range(-100,100),randf_range(-100,100));
 	e.set_target(player)
 	enemy_container.add_child(e)
+
+
+func _on_player_end_game() -> void:
+	get_tree().reload_current_scene()
