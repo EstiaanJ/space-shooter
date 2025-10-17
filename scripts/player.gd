@@ -9,7 +9,9 @@ extends CharacterBody2D
 @onready var muzzle = $Muzzle 
 @onready var shield_col = $ShieldCollider
 @onready var damage_module = $Damage_Module
+@onready var rifle_wp_module = $Rifle
 @onready var shield_rad = shield_col.shape.radius
+
 
 var shield_scene = preload("res://scenes/shield2.tscn")
 var laser_scene = preload("res://scenes/laser.tscn")
@@ -26,11 +28,13 @@ func _process(delta):
 	else:
 		shield_col.shape.radius = shield_rad
 	if Input.is_action_pressed("shoot"):
-		if !shoot_cd:
-			shoot_cd = true
-			shoot()
-			await get_tree().create_timer(0.2).timeout
-			shoot_cd = false
+		var target_pos: Vector2 = Vector2.UP.rotated(rotation)
+		rifle_wp_module.get_node("Weapon_Module").shoot(global_position,target_pos, "player_team")
+		#if !shoot_cd:
+		#	shoot_cd = true
+		#	shoot()
+		#	await get_tree().create_timer(0.2).timeout
+		#	shoot_cd = false
 
 func shoot():  
 	laser_shot.emit(laser_scene,muzzle.global_position,rotation)

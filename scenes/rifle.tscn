@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://g3jvuohwkgbs"]
 
-[ext_resource type="Script" uid="uid://cin1npfuiqc11" path="res://scenes/weapon_module.gd" id="1_20e1h"]
+[ext_resource type="Script" uid="uid://cin1npfuiqc11" path="res://scripts/weapon_module.gd" id="1_20e1h"]
 
 [node name="Rifle" type="Node2D"]
 
@@ -8,17 +8,3 @@
 
 [node name="Weapon_Module" type="Node" parent="."]
 script = ExtResource("1_20e1h")
-sp_damage_direct = null
-ap_damage_direct = null
-hp_damage_direct = null
-ap_pen_direct = null
-ap_damage_aoe = null
-hp_damage_aoe = null
-ap_pen_aoe = null
-projectile_speed = null
-projectile_turnrate = null
-trigger_rad = null
-shield_bypass = null
-
-[node name="CooldownTimer" type="Timer" parent="Weapon_Module"]
-one_shot = true
