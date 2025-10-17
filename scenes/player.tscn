@@ -79,7 +79,7 @@ script = ExtResource("6_tuyoq")
 [node name="Weapon_Module" parent="Rifle" index="1"]
 hp_damage_direct = 100.0
 projectile_speed = 400.0
-cd_time = 0.1
+cd_time = 0.2
 projectile_scene = ExtResource("8_smehm")
 
 [node name="OffScreenDamage" type="CanvasModulate" parent="."]
