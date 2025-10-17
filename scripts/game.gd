@@ -23,7 +23,7 @@ func _ready():
 	player.laser_shot.connect(_on_player_laser_shot)
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	enemy_count = enemy_container.get_child_count()
 	enemy_count_label.text = "Enemies: " + str(enemy_count)
 	time_score.text = "Time: " + str(float(Time.get_ticks_msec()/1000.0))

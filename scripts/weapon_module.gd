@@ -31,7 +31,7 @@ var cd_flag := false
 func shoot(source: Vector2, target: Vector2, team: String) -> void:
 	if !cd_flag:
 			cd_flag = true
-			var target_bearing = source.angle_to_point(target) #Probably not needed anymore
+#			var target_bearing = source.angle_to_point(target) #Probably not needed anymore
 			var plasma = projectile_scene.instantiate()
 			plasma.global_position = source
 			plasma.initialize(target, projectile_speed, team, self) #func initialize(rot: float, speedIn: float, creatorIn: String, owmIn: Weapon_Module) -> void:

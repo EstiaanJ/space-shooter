@@ -21,7 +21,7 @@ unique_name_in_owner = true
 [node name="Weapon_Module" parent="Rifle" index="1"]
 hp_damage_direct = 33.0
 projectile_speed = 100.0
-cd_time = 1.23
+cd_time = 1.4
 projectile_scene = ExtResource("3_xwavj")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

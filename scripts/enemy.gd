@@ -19,11 +19,11 @@ var shoot_cd := false
 func _ready() -> void:
 	health = start_health
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if target:
 		target_pos = target.global_position
 		
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if target and target_pos:
 		# Calculate direction vector from enemy to target
 		var direction = (target_pos - global_position).normalized()

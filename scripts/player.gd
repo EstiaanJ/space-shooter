@@ -22,7 +22,7 @@ signal end_game
 
 
 
-func _process(delta):
+func _process(_delta):
 	if damage_module.shield_points <= 0:
 		shield_col.shape.radius = 0
 	else:

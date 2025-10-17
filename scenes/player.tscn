@@ -45,7 +45,7 @@ max_armour_points = 200.0
 sp_regen_rate = 45.0
 
 [node name="Team" parent="." instance=ExtResource("3_qhqgy")]
-team_value = "player_team"
+team_value = "enemy_team"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
