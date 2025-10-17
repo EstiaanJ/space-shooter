@@ -95,12 +95,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Limitations.md",
+                "file": "Almo's Ideas.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Limitations"
+              "title": "Almo's Ideas"
             }
           }
         ],
@@ -254,31 +254,32 @@
   },
   "active": "12ee5ce419d8a4d3",
   "lastOpenFiles": [
-    "Airburst1.PNG",
-    "256Pallet.png",
-    "TODO.md",
-    "Weapons.md",
-    "Almo's Ideas.md",
-    "FullShield1.PNG",
-    "Ideas.md",
-    "Enemyplasmashot1.PNG.import",
-    "Enemyplasmashot1.PNG",
+    "LargeEnemy1.PNG.import",
+    "LargeEnemyGun1.PNG.import",
+    "Enemyfighter1.PNG.import",
+    "Enemyfighter2.PNG.import",
+    "LargeEnemy1.PNG",
+    "Enemyfighter2.PNG",
+    "Enemyfighter1.PNG",
+    "LargeEnemyGun1.PNG",
     "Enemygunner1.PNG.import",
     "Enemygunner1.PNG",
+    "Enemyplasmashot1.PNG.import",
+    "Enemyplasmashot1.PNG",
+    "Ideas.md",
     "Limitations.md",
     "_Enemy_ Checkmate.md",
+    "Almo's Ideas.md",
+    "TODO.md",
     "spacebg.bmp",
     "pship.png",
     "Plasmashot2.PNG",
     "Plasmashot1.PNG",
-    "EngineAnimation1.PNG",
     "Airburst1.PNG.import",
     "FullShield1.PNG.import",
     "Engine1.png.import",
     "player ship sprite sheet.kra~",
     "player ship sprite sheet.kra",
-    "EngineAnimation1.PNG.import",
-    "EnemyDrone.PNG.import",
-    "Plasmashot2.PNG.import"
+    "Weapons.md"
   ]
 }
