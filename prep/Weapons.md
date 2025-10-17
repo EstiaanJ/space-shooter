@@ -25,9 +25,10 @@ Fires a slow moving missile
 Will actively avoid friendlies and track enemies. Won't explode upon contact with a friendly, but will damage a friendly that is in range of a missile explosion
 Deals AOE damage only
 
+
 # AOE
 Bypasses shields
-Neutral to armour
+Weak to armour and no armour penetration
+- Special frag mods can increase APen
 No effect against shield
 Neutral to HP
-AOE

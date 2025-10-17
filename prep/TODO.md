@@ -1,17 +1,17 @@
 # Art
-- A better plasma shot
-- An enemy 
-- Exhaust animation for player ship
-- Shield
+- A better plasma shot ✅
+- An enemy  ✅
+- Exhaust animation for player ship ✅
+- Shield ✅
 
 # Gameplay & Engine
 
 - Add shield Visuals
 - In-Game GUI
 	- Status info
-		- Health bar
-		- Shield bar
-		- Armour bar
+		- Health bar ✅
+		- Shield bar ✅
+		- Armour bar ✅
 		- Energy bar
 	- Radar system / enemy locator
 - End of run
@@ -27,7 +27,8 @@
 	- Current run boosts (HP etc)
 
 
-## Cleanup & Maintenace
+## Cleanup & Maintenance
 - Convert plasma gun to gun module
 
 ## Bugs
+ - Enemies die instantly 

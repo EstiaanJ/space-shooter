@@ -95,12 +95,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Almo's Ideas.md",
-                "mode": "source",
+                "file": "Weapons.md",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Almo's Ideas"
+              "title": "Weapons"
             }
           }
         ],
@@ -254,6 +254,10 @@
   },
   "active": "12ee5ce419d8a4d3",
   "lastOpenFiles": [
+    "TODO.md",
+    "Weapons.md",
+    "256Pallet.png",
+    "Almo's Ideas.md",
     "LargeEnemy1.PNG.import",
     "LargeEnemyGun1.PNG.import",
     "Enemyfighter1.PNG.import",
@@ -269,17 +273,12 @@
     "Ideas.md",
     "Limitations.md",
     "_Enemy_ Checkmate.md",
-    "Almo's Ideas.md",
-    "TODO.md",
     "spacebg.bmp",
     "pship.png",
     "Plasmashot2.PNG",
-    "Plasmashot1.PNG",
     "Airburst1.PNG.import",
     "FullShield1.PNG.import",
     "Engine1.png.import",
-    "player ship sprite sheet.kra~",
-    "player ship sprite sheet.kra",
-    "Weapons.md"
+    "player ship sprite sheet.kra~"
   ]
 }
