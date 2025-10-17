@@ -16,13 +16,15 @@ extends CharacterBody2D
 var shield_scene = preload("res://scenes/shield2.tscn")
 var laser_scene = preload("res://scenes/laser.tscn")
 var shoot_cd := false
+var on_screen = true
 
 signal laser_shot(laser_scene, location, rotation)
 signal end_game
+signal off_screen_damage
 
 
 
-func _process(_delta):
+func _process(delta):
 	if damage_module.shield_points <= 0:
 		shield_col.shape.radius = 0
 	else:
@@ -30,11 +32,9 @@ func _process(_delta):
 	if Input.is_action_pressed("shoot"):
 		var target_pos: Vector2 = Vector2.UP.rotated(rotation)
 		rifle_wp_module.get_node("Weapon_Module").shoot(global_position,target_pos, "player_team")
-		#if !shoot_cd:
-		#	shoot_cd = true
-		#	shoot()
-		#	await get_tree().create_timer(0.2).timeout
-		#	shoot_cd = false
+	if !on_screen:
+		damage_module.damage(50.0 * delta, global_position)
+		off_screen_damage.emit()
 
 func shoot():  
 	laser_shot.emit(laser_scene,muzzle.global_position,rotation)
@@ -65,3 +65,12 @@ func _on_damage_module_shield_hit() -> void:
 	var shield = shield_scene.instantiate()
 	add_child(shield)
 	
+
+
+func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
+	on_screen = false
+	
+
+
+func _on_visible_on_screen_notifier_2d_screen_entered() -> void:
+	on_screen = true

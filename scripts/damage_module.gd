@@ -55,6 +55,6 @@ func damage(amount: float, location: Vector2) -> void:
 
 	print("<HIT> HP: " + str(hull_points) + "  | AP: " + str(armour_points) + "  | SP: " + str(shield_points) )
 	var plasmaHit = plasma_hit.instantiate()
-	plasmaHit.global_position = location
+	plasmaHit.global_position = location #TODO: Move this!
 	if get_tree():
 		get_tree().root.get_node("Game").add_child(plasmaHit)

@@ -6,6 +6,5 @@
 script = ExtResource("1_uqx2v")
 
 [node name="ChargeTimer" type="Timer" parent="."]
-wait_time = 1.2
 one_shot = true
 autostart = true

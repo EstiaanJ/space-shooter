@@ -13,7 +13,7 @@ func initialize(target: Vector2, speedIn: float, creatorIn: String, owmIn: Weapo
 	team = creatorIn
 	origin_weapon_module = owmIn.duplicate()
 
-func _process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	global_position += direction * speed * delta
 	
 func execute_damage(damage_module: Damage_Module) -> void:

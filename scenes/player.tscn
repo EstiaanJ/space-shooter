@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b6culji4mri"]
+[gd_scene load_steps=12 format=3 uid="uid://b6culji4mri"]
 
 [ext_resource type="Script" uid="uid://b4npd2by41okh" path="res://scripts/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://c7yr6jm2p4rse" path="res://assets/pship1.PNG" id="2_g2els"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://b3xpykff283jp" path="res://scripts/coords_debug.gd" id="6_tuyoq"]
 [ext_resource type="PackedScene" uid="uid://g3jvuohwkgbs" path="res://scenes/rifle.tscn" id="7_fjrip"]
 [ext_resource type="PackedScene" uid="uid://ccbpms4gxy88t" path="res://scenes/player_plasma_shot.tscn" id="8_smehm"]
+[ext_resource type="Script" uid="uid://d2vh8bhcpgq2u" path="res://scripts/off_screen_damage.gd" id="9_ur7pv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qlg0r"]
 radius = 13.0
@@ -38,14 +39,16 @@ drag_top_margin = 0.6
 drag_right_margin = 0.6
 drag_bottom_margin = 0.6
 
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Camera2D"]
+
 [node name="Damage_Module" parent="." instance=ExtResource("4_dqkch")]
-max_hull_points = 500.0
-max_shield_points = 200.0
+max_hull_points = 300.0
+max_shield_points = 68.0
 max_armour_points = 200.0
-sp_regen_rate = 45.0
+sp_regen_rate = 35.0
 
 [node name="Team" parent="." instance=ExtResource("3_qhqgy")]
-team_value = "enemy_team"
+team_value = "player_team"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -76,8 +79,17 @@ script = ExtResource("6_tuyoq")
 [node name="Weapon_Module" parent="Rifle" index="1"]
 hp_damage_direct = 100.0
 projectile_speed = 400.0
+cd_time = 0.1
 projectile_scene = ExtResource("8_smehm")
 
+[node name="OffScreenDamage" type="CanvasModulate" parent="."]
+color = Color(0.99998266, 0.24512115, 0.18930459, 1)
+script = ExtResource("9_ur7pv")
+
+[connection signal="screen_entered" from="Camera2D/VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_entered"]
+[connection signal="screen_entered" from="Camera2D/VisibleOnScreenNotifier2D" to="OffScreenDamage" method="_on_visible_on_screen_notifier_2d_screen_entered"]
+[connection signal="screen_exited" from="Camera2D/VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
+[connection signal="screen_exited" from="Camera2D/VisibleOnScreenNotifier2D" to="OffScreenDamage" method="_on_visible_on_screen_notifier_2d_screen_exited"]
 [connection signal="no_hp" from="Damage_Module" to="." method="_on_damage_module_no_hp"]
 [connection signal="shield_hit" from="Damage_Module" to="." method="_on_damage_module_shield_hit"]
 
