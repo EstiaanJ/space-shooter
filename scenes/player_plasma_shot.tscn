@@ -4,15 +4,15 @@
 [ext_resource type="Texture2D" uid="uid://dg60bt4bcyf11" path="res://assets/Plasmashot1.PNG" id="2_op8eb"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_op8eb"]
-radius = 4.0
-height = 18.0
+radius = 3.0
+height = 16.0
 
 [node name="PlayerPlasmaShot" instance=ExtResource("1_3j7bc")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
-position = Vector2(0, 7)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
+position = Vector2(0, 6)
 shape = SubResource("CapsuleShape2D_op8eb")
 
 [node name="Sprite2D" parent="." index="2"]
-position = Vector2(0, 7)
+position = Vector2(0, 3)
 texture = ExtResource("2_op8eb")

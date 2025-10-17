@@ -21,21 +21,21 @@ class_name Weapon_Module
 @export var shield_bypass = false
 
 @export var cd_time = 0.5
-
+@export var projectile_scene: PackedScene
 
 @onready var owner_UUID: String
-@onready var plasma_scene = preload("res://scenes/player_plasma_shot.tscn")
+#@onready var plasma_scene = preload("res://scenes/player_plasma_shot.tscn")
 
 var cd_flag := false
 
 func shoot(source: Vector2, target: Vector2, team: String) -> void:
 	if !cd_flag:
 			cd_flag = true
-			var target_bearing = source.angle_to_point(target)
-			var plasma = plasma_scene.instantiate()
+			var target_bearing = source.angle_to_point(target) #Probably not needed anymore
+			var plasma = projectile_scene.instantiate()
 			plasma.global_position = source
 			plasma.initialize(target, projectile_speed, team, self) #func initialize(rot: float, speedIn: float, creatorIn: String, owmIn: Weapon_Module) -> void:
-			plasma.speed = 100
+			plasma.speed = projectile_speed
 			get_tree().root.get_node("Game").add_child(plasma)
 			await get_tree().create_timer(cd_time).timeout
 			cd_flag = false

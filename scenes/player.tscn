@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://b6culji4mri"]
+[gd_scene load_steps=11 format=3 uid="uid://b6culji4mri"]
 
 [ext_resource type="Script" uid="uid://b4npd2by41okh" path="res://scripts/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://c7yr6jm2p4rse" path="res://assets/pship1.PNG" id="2_g2els"]
@@ -7,6 +7,7 @@
 [ext_resource type="FontFile" uid="uid://hh1vy426mfr1" path="res://assets/TeenyTinyPixls-o2zo.ttf" id="5_qlg0r"]
 [ext_resource type="Script" uid="uid://b3xpykff283jp" path="res://scripts/coords_debug.gd" id="6_tuyoq"]
 [ext_resource type="PackedScene" uid="uid://g3jvuohwkgbs" path="res://scenes/rifle.tscn" id="7_fjrip"]
+[ext_resource type="PackedScene" uid="uid://ccbpms4gxy88t" path="res://scenes/player_plasma_shot.tscn" id="8_smehm"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qlg0r"]
 radius = 13.0
@@ -74,6 +75,8 @@ script = ExtResource("6_tuyoq")
 
 [node name="Weapon_Module" parent="Rifle" index="1"]
 hp_damage_direct = 100.0
+projectile_speed = 400.0
+projectile_scene = ExtResource("8_smehm")
 
 [connection signal="no_hp" from="Damage_Module" to="." method="_on_damage_module_no_hp"]
 [connection signal="shield_hit" from="Damage_Module" to="." method="_on_damage_module_shield_hit"]

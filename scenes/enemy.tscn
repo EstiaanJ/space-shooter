@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://x52rj0ldlp3s"]
+[gd_scene load_steps=8 format=3 uid="uid://x52rj0ldlp3s"]
 
 [ext_resource type="Script" uid="uid://b6yirkhd5bcpl" path="res://scripts/enemy.gd" id="1_md0e3"]
 [ext_resource type="Texture2D" uid="uid://b3ivv2ha8fcch" path="res://assets/EnemyDrone.PNG" id="2_5uy6h"]
 [ext_resource type="PackedScene" uid="uid://g3jvuohwkgbs" path="res://scenes/rifle.tscn" id="2_c4w8v"]
 [ext_resource type="PackedScene" uid="uid://d0ke1wc1edk0x" path="res://scenes/team.tscn" id="3_4ra3w"]
+[ext_resource type="PackedScene" uid="uid://jhubbwucn35r" path="res://scenes/enemy_plasma_shot.tscn" id="3_xwavj"]
 [ext_resource type="PackedScene" uid="uid://bydnj8ee4afqv" path="res://scenes/damage_module.tscn" id="4_5uy6h"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_md0e3"]
@@ -15,11 +16,13 @@ collision_mask = 5
 script = ExtResource("1_md0e3")
 
 [node name="Rifle" parent="." instance=ExtResource("2_c4w8v")]
+unique_name_in_owner = true
 
 [node name="Weapon_Module" parent="Rifle" index="1"]
 hp_damage_direct = 33.0
-projectile_speed = 50.0
+projectile_speed = 100.0
 cd_time = 1.23
+projectile_scene = ExtResource("3_xwavj")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1

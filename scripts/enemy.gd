@@ -25,7 +25,9 @@ func _physics_process(delta: float) -> void:
 		
 func _process(delta: float) -> void:
 	if target and target_pos:
-		rifle_wp_module.get_node("Weapon_Module").shoot(global_position,target_pos, "enemy_team")
+		# Calculate direction vector from enemy to target
+		var direction = (target_pos - global_position).normalized()
+		rifle_wp_module.get_node("Weapon_Module").shoot(global_position, direction, "enemy_team")
 
 #func shoot(aim_point: Vector2):
 #	var target_bearing = global_position.angle_to_point(aim_point) + PI/2
