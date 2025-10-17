@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://db4gi7qrbhfcl"]
+
+[ext_resource type="Script" uid="uid://q6fdrbp0ar3x" path="res://scripts/projectile.gd" id="1_c8fcr"]
+
+[node name="Projectile" type="Node2D"]
+script = ExtResource("1_c8fcr")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

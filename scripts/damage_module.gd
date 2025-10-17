@@ -1,4 +1,5 @@
 extends Node
+class_name Damage_Module
 
 @export var max_hull_points: float
 @export var max_shield_points: float

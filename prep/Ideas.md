@@ -10,3 +10,7 @@ When a shield is hit the shield animation should play at the hit location which 
 
 # Lighting
 Use lighting effects for explosions, plasma, jets, shields etc
+
+
+# Weapon Cooldown
+Cooldown mechanics tied to the weapon slot, which is in turn tied to the action button assignment
