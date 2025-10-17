@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://jhubbwucn35r"]
+
+[ext_resource type="PackedScene" uid="uid://db4gi7qrbhfcl" path="res://scenes/projectile.tscn" id="1_y2wrl"]
+[ext_resource type="Texture2D" uid="uid://6eyclc31he23" path="res://assets/Enemyplasmashot1.PNG" id="2_y2wrl"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_op8eb"]
+radius = 3.0
+height = 10.0
+
+[node name="PlayerPlasmaShot" instance=ExtResource("1_y2wrl")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
+position = Vector2(0, 3)
+shape = SubResource("CapsuleShape2D_op8eb")
+
+[node name="Sprite2D" parent="." index="2"]
+position = Vector2(0, 3)
+texture = ExtResource("2_y2wrl")

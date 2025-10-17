@@ -2,6 +2,9 @@ class_name Enemy extends Area2D
 
 @export var speed = 150
 @export var start_health = 200
+
+@onready var rifle_wp_module = $Rifle
+
 var health = start_health
 #signal enemy_death_sig(location)
 var explosion_scene = preload("res://scenes/enemy_death.tscn")
@@ -22,18 +25,16 @@ func _physics_process(delta: float) -> void:
 		
 func _process(delta: float) -> void:
 	if target and target_pos:
-		if !shoot_cd:
-			shoot_cd = true
-			shoot(target_pos)
-			await get_tree().create_timer(1.15).timeout
-			shoot_cd = false
+		# Calculate direction vector from enemy to target
+		var direction = (target_pos - global_position).normalized()
+		rifle_wp_module.get_node("Weapon_Module").shoot(global_position, direction, "enemy_team")
 
-func shoot(aim_point: Vector2):
-	var target_bearing = global_position.angle_to_point(aim_point) + PI/2
-	var shot = laser_scene.instantiate()
-	shot.global_position = global_position
-	shot.initialize(target_bearing,100,"enemy")
-	get_tree().root.get_node("Game").add_child(shot)
+#func shoot(aim_point: Vector2):
+#	var target_bearing = global_position.angle_to_point(aim_point) + PI/2
+#	var shot = laser_scene.instantiate()
+#	shot.global_position = global_position
+#	shot.initialize(target_bearing,100,"enemy")
+#	get_tree().root.get_node("Game").add_child(shot)
 
 func set_target(player_ref):
 	target = player_ref

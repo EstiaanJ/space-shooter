@@ -20,22 +20,22 @@ class_name Weapon_Module
 
 @export var shield_bypass = false
 
-@export var projectile: Projectile
+@export var cd_time = 0.5
+@export var projectile_scene: PackedScene
 
 @onready var owner_UUID: String
-@onready var cd_timer: Timer = $CooldownTimer
+#@onready var plasma_scene = preload("res://scenes/player_plasma_shot.tscn")
 
+var cd_flag := false
 
-func shoot(target: Vector2) -> void:
-	if cd_timer.timeout:
-		cd_timer.start()
-		#projectile.initialize()
-		
-		
-
-			
-#	var target_bearing = global_position.angle_to_point(aim_point) + PI/2
-#	var shot = laser_scene.instantiate()
-#	shot.global_position = global_position
-#	shot.initialize(target_bearing,100,"enemy")
-#	get_tree().root.get_node("Game").add_child(shot)
+func shoot(source: Vector2, target: Vector2, team: String) -> void:
+	if !cd_flag:
+			cd_flag = true
+			var target_bearing = source.angle_to_point(target) #Probably not needed anymore
+			var plasma = projectile_scene.instantiate()
+			plasma.global_position = source
+			plasma.initialize(target, projectile_speed, team, self) #func initialize(rot: float, speedIn: float, creatorIn: String, owmIn: Weapon_Module) -> void:
+			plasma.speed = projectile_speed
+			get_tree().root.get_node("Game").add_child(plasma)
+			await get_tree().create_timer(cd_time).timeout
+			cd_flag = false
