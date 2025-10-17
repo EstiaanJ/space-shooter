@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://du6yhir1d0hcp"
-path="res://.godot/imported/Enemyfighter2.PNG-53e078595823da426da85790ddc4d66a.ctex"
+uid="uid://6eyclc31he23"
+path="res://.godot/imported/Enemyplasmashot1.PNG-cf03aeaf3d4d1b3e503fd109fdd0665f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://prep/Enemyfighter2.PNG"
-dest_files=["res://.godot/imported/Enemyfighter2.PNG-53e078595823da426da85790ddc4d66a.ctex"]
+source_file="res://assets/Enemyplasmashot1.PNG"
+dest_files=["res://.godot/imported/Enemyplasmashot1.PNG-cf03aeaf3d4d1b3e503fd109fdd0665f.ctex"]
 
 [params]
 

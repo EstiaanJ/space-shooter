@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bwndr5na5cthr"
-path="res://.godot/imported/Enemyplasmashot1.PNG-be5776f33846c1dd371993b3d0dbef09.ctex"
+uid="uid://xnyd33yydnuj"
+path="res://.godot/imported/Enemygunner1.PNG-f253dea1d71740b4b74d43f8cd65220e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://prep/Enemyplasmashot1.PNG"
-dest_files=["res://.godot/imported/Enemyplasmashot1.PNG-be5776f33846c1dd371993b3d0dbef09.ctex"]
+source_file="res://assets/Enemygunner1.PNG"
+dest_files=["res://.godot/imported/Enemygunner1.PNG-f253dea1d71740b4b74d43f8cd65220e.ctex"]
 
 [params]
 

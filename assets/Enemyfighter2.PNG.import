@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5yxu5a64aleg"
-path="res://.godot/imported/Enemygunner1.PNG-f5c295e3fe298f8357a939d7946db7e8.ctex"
+uid="uid://dkwf4i2kwrcno"
+path="res://.godot/imported/Enemyfighter2.PNG-7f03424fec6828491d870e26115fdec1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://prep/Enemygunner1.PNG"
-dest_files=["res://.godot/imported/Enemygunner1.PNG-f5c295e3fe298f8357a939d7946db7e8.ctex"]
+source_file="res://assets/Enemyfighter2.PNG"
+dest_files=["res://.godot/imported/Enemyfighter2.PNG-7f03424fec6828491d870e26115fdec1.ctex"]
 
 [params]
 

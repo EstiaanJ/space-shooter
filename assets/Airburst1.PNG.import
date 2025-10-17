@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://i67do806508o"
-path="res://.godot/imported/Airburst1.PNG-ba9f1be7ce16eb76be9c8a8aded95dd7.ctex"
+uid="uid://cp5ny66nuj6d3"
+path="res://.godot/imported/Airburst1.PNG-22592bac6c75beb57f5a0a4f9e1d3c9c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://prep/Airburst1.PNG"
-dest_files=["res://.godot/imported/Airburst1.PNG-ba9f1be7ce16eb76be9c8a8aded95dd7.ctex"]
+source_file="res://assets/Airburst1.PNG"
+dest_files=["res://.godot/imported/Airburst1.PNG-22592bac6c75beb57f5a0a4f9e1d3c9c.ctex"]
 
 [params]
 
