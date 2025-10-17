@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bdglrxkfd6f7f"]
+[gd_scene load_steps=0 format=3 uid="uid://bdglrxkfd6f7f"]
 
 [node name="PauseMenu" type="Node2D"]
 
