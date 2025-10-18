@@ -1,20 +1,58 @@
-[gd_scene load_steps=4 format=3 uid="uid://jhubbwucn35r"]
+[gd_scene load_steps=8 format=3 uid="uid://jhubbwucn35r"]
 
 [ext_resource type="PackedScene" uid="uid://db4gi7qrbhfcl" path="res://scenes/projectile.tscn" id="1_y2wrl"]
 [ext_resource type="Texture2D" uid="uid://6eyclc31he23" path="res://assets/Enemyplasmashot1.PNG" id="2_y2wrl"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_y2wrl"]
+
+[sub_resource type="Gradient" id="Gradient_0ntvd"]
+offsets = PackedFloat32Array(0, 0.9957447)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_c12qe"]
+gradient = SubResource("Gradient_0ntvd")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_twait"]
+lifetime_randomness = 0.12
+particle_flag_disable_z = true
+particle_flag_damping_as_friction = true
+emission_shape = 1
+emission_sphere_radius = 5.0
+inherit_velocity_ratio = 0.6
+direction = Vector3(0, -1, 0)
+spread = 80.69
+initial_velocity_min = 7.87
+initial_velocity_max = 101.479996
+gravity = Vector3(0, 0, 0)
+damping_min = 0.2
+damping_max = 1.0
+color = Color(1, 0.3764706, 0.15294118, 1)
+color_ramp = SubResource("GradientTexture1D_c12qe")
+hue_variation_min = -0.07000002
+hue_variation_max = 0.06999998
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y2wrl"]
 size = Vector2(6, 9)
 
 [node name="PlayerPlasmaShot" instance=ExtResource("1_y2wrl")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." index="0"]
+material = SubResource("CanvasItemMaterial_y2wrl")
+amount = 50
+lifetime = 1.2
+explosiveness = 0.26
+randomness = 0.55
+fixed_fps = 15
+trail_lifetime = 0.92
+process_material = SubResource("ParticleProcessMaterial_twait")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 position = Vector2(0, 2.5)
 shape = SubResource("RectangleShape2D_y2wrl")
 
-[node name="DespawnTimer" parent="." index="1"]
+[node name="DespawnTimer" parent="." index="2"]
 wait_time = 15.0
 
-[node name="Sprite2D" parent="." index="2"]
+[node name="Sprite2D" parent="." index="3"]
 position = Vector2(0, 3)
 texture = ExtResource("2_y2wrl")
