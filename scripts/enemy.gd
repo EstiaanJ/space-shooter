@@ -13,6 +13,7 @@ var target: CharacterBody2D
 var target_pos: Vector2
 var laser_scene = preload("res://scenes/laser.tscn")
 var shoot_cd := false
+var uuid: String = "enemy" + str(self.get_instance_id())
 #signal laser_shot(laser_scene, location, rotation)
 
 

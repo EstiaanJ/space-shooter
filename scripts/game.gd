@@ -13,6 +13,8 @@ extends Node2D
 @onready var ap_bar = $CanvasLayer/Control/APBar
 @onready var enemy_count_label = $CanvasLayer/Control/EnemyCnt
 @onready var time_score = $CanvasLayer/Control/TimeScore
+@onready var score_label = $CanvasLayer/Control/Score
+@onready var score_tracker = $ScoreTracker
 var enemy_count = 0
 #var player = null
 
@@ -27,6 +29,7 @@ func _process(_delta: float) -> void:
 	enemy_count = enemy_container.get_child_count()
 	enemy_count_label.text = "Enemies: " + str(enemy_count)
 	time_score.text = "Time: " + str(float(Time.get_ticks_msec()/1000.0))
+	score_label.text = "Score: " + str(score_tracker.score)
 	update_player_health()
 	if Input.is_action_just_pressed("quit"):
 		get_tree().quit()

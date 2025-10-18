@@ -24,11 +24,12 @@ func _process(delta: float) -> void:
 	if shield_points > max_shield_points:
 		shield_points = max_shield_points
 
-func damage(amount: float, location: Vector2) -> void:
+func damage(amount: float, location: Vector2) -> float:
 	var damage_remaining = amount
 	var sp_damage = 0
 	var ap_damage = 0
 	var hp_damage = 0
+	var score = 0
 	charge_timer.start()
 	if shield_points > 0:
 		shield_hit.emit()
@@ -42,19 +43,15 @@ func damage(amount: float, location: Vector2) -> void:
 			ap_damage = armour_points
 			if damage_remaining < hull_points:
 				hp_damage = damage_remaining
+				score = hp_damage
 			else:
-				print("KILL")	
-				#var explosion = explosion_scene.instantiate()
-				#explosion.global_position = global_position
-				#get_tree().root.get_node("Game").add_child(explosion)
+				score = hull_points
 				no_hp.emit()
-				#KILL
 	hull_points = hull_points - hp_damage
 	armour_points = armour_points - ap_damage
 	shield_points= shield_points - sp_damage
-
-	print("<HIT> HP: " + str(hull_points) + "  | AP: " + str(armour_points) + "  | SP: " + str(shield_points) )
 	var plasmaHit = plasma_hit.instantiate()
 	plasmaHit.global_position = location #TODO: Move this!
 	if get_tree():
 		get_tree().root.get_node("Game").add_child(plasmaHit)
+	return score

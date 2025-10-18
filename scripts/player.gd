@@ -11,6 +11,7 @@ extends CharacterBody2D
 @onready var damage_module = $Damage_Module
 @onready var rifle_wp_module = $PlasmaCannon
 @onready var shield_rad = shield_col.shape.radius
+var uuid: String = "player" + str(self.get_instance_id())
 
 
 var shield_scene = preload("res://scenes/shield2.tscn")

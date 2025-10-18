@@ -28,6 +28,10 @@ class_name Weapon_Module
 
 var cd_flag := false
 
+func _ready() -> void:
+	owner_UUID = get_parent().get_parent().uuid
+	print("Weapon Module: " + owner_UUID)
+
 func shoot(source: Vector2, target: Vector2, team: String) -> void:
 	if !cd_flag:
 			cd_flag = true

@@ -1,10 +1,15 @@
 extends Area2D
 class_name Projectile
 
+
+@onready var score_tracker = get_tree().root.get_node("Game/ScoreTracker")
+@onready var playerUUID: String = score_tracker.player_uuid
 var speed: float
 var direction: Vector2 = Vector2.UP
 var team: String
 var origin_weapon_module: Weapon_Module
+
+
 
 func initialize(target: Vector2, speedIn: float, creatorIn: String, owmIn: Weapon_Module) -> void:
 	speed = speedIn
@@ -12,12 +17,17 @@ func initialize(target: Vector2, speedIn: float, creatorIn: String, owmIn: Weapo
 	direction = target.normalized()
 	team = creatorIn
 	origin_weapon_module = owmIn.duplicate()
+	origin_weapon_module.owner_UUID = owmIn.owner_UUID
 
 func _physics_process(delta: float) -> void:
 	global_position += direction * speed * delta
 	
 func execute_damage(damage_module: Damage_Module) -> void:
-	damage_module.damage(origin_weapon_module.hp_damage_direct,global_position)
+	var score = damage_module.damage(origin_weapon_module.hp_damage_direct,global_position)
+	print(origin_weapon_module.owner_UUID + "  |  " + playerUUID)
+	if origin_weapon_module.owner_UUID == playerUUID:
+		print("SCORE!: " + str(score))
+		score_tracker.add_score(score)
 	queue_free()
 
 

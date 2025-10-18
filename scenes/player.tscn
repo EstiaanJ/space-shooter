@@ -65,6 +65,7 @@ position = Vector2(0, -11)
 shape = SubResource("CircleShape2D_qlg0r")
 
 [node name="Label" type="Label" parent="."]
+visible = false
 offset_left = 28.0
 offset_top = 19.0
 offset_right = 106.0

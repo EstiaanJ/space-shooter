@@ -113,6 +113,8 @@ left_joy_down={
 
 [physics]
 
+2d/run_on_separate_thread=true
+common/physics_ticks_per_second=120
 2d/default_gravity_vector=Vector2(0, 0)
 
 [rendering]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://ir8qge0ul3d6"]
+[gd_scene load_steps=23 format=3 uid="uid://ir8qge0ul3d6"]
 
 [ext_resource type="Script" uid="uid://cswo5es3jamcd" path="res://scripts/game.gd" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://b6culji4mri" path="res://scenes/player.tscn" id="2_yqjtg"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://b1fgkulymv6hy" path="res://scripts/enemy_spawn_timer.gd" id="5_u5sy4"]
 [ext_resource type="FontFile" uid="uid://hh1vy426mfr1" path="res://assets/TeenyTinyPixls-o2zo.ttf" id="7_gee14"]
 [ext_resource type="FontFile" uid="uid://24ehjnfan3yf" path="res://assets/GelatinTTF.ttf" id="8_gee14"]
+[ext_resource type="Script" uid="uid://cgdcsswbvo335" path="res://scripts/score_tracker.gd" id="9_0tnpc"]
 
 [sub_resource type="Theme" id="Theme_lbhrr"]
 default_font = ExtResource("5_iywne")
@@ -94,77 +95,131 @@ offset_bottom = 359.0
 theme = SubResource("Theme_lbhrr")
 
 [node name="HPBar" type="ProgressBar" parent="CanvasLayer/Control"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.0015625
+anchor_top = 0.9275766
+anchor_right = -0.0015625
+anchor_bottom = 0.9275766
 offset_left = 13.0
 offset_top = 2.0
 offset_right = 115.0
 offset_bottom = 9.0
 theme = SubResource("Theme_iywne")
 value = 80.0
+metadata/_edit_use_anchors_ = true
 
 [node name="APBar" type="ProgressBar" parent="CanvasLayer/Control"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.0015625
+anchor_top = 0.9275766
+anchor_right = -0.0015625
+anchor_bottom = 0.9275766
 offset_left = 13.0
 offset_top = 10.0
 offset_right = 115.0
 offset_bottom = 17.0
 theme = SubResource("Theme_u5sy4")
 value = 80.0
+metadata/_edit_use_anchors_ = true
 
 [node name="SPBar" type="ProgressBar" parent="CanvasLayer/Control"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.0015625
+anchor_top = 0.9275766
+anchor_right = -0.0015625
+anchor_bottom = 0.9275766
 offset_left = 13.0
 offset_top = 18.0
 offset_right = 115.0
 offset_bottom = 25.0
 theme = SubResource("Theme_vtaks")
 value = 80.0
+metadata/_edit_use_anchors_ = true
 
-[node name="Label2" type="Label" parent="CanvasLayer/Control"]
-layout_mode = 0
+[node name="HPLabel" type="Label" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.0015625
+anchor_top = 0.9275766
+anchor_right = -0.0015625
+anchor_bottom = 0.9275766
 offset_left = 3.0
 offset_top = 3.0
 offset_right = 13.0
 offset_bottom = 9.0
 text = "HP"
 label_settings = SubResource("LabelSettings_vtaks")
+metadata/_edit_use_anchors_ = true
 
-[node name="Label3" type="Label" parent="CanvasLayer/Control"]
-layout_mode = 0
+[node name="APLabel" type="Label" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.0015625
+anchor_top = 0.9275766
+anchor_right = -0.0015625
+anchor_bottom = 0.9275766
 offset_left = 3.0
 offset_top = 11.0
 offset_right = 13.0
 offset_bottom = 17.0
 text = "AP"
 label_settings = SubResource("LabelSettings_vtaks")
+metadata/_edit_use_anchors_ = true
 
-[node name="Label4" type="Label" parent="CanvasLayer/Control"]
-layout_mode = 0
+[node name="SPLabel" type="Label" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.0015625
+anchor_top = 0.9275766
+anchor_right = -0.0015625
+anchor_bottom = 0.9275766
 offset_left = 3.0
 offset_top = 19.0
 offset_right = 13.0
 offset_bottom = 25.0
 text = "SP"
 label_settings = SubResource("LabelSettings_vtaks")
+metadata/_edit_use_anchors_ = true
 
 [node name="EnemyCnt" type="Label" parent="CanvasLayer/Control"]
 layout_mode = 0
-offset_left = 416.0
-offset_top = 2.0
-offset_right = 616.0
-offset_bottom = 22.0
+offset_left = 438.0
+offset_top = 1.0
+offset_right = 638.0
+offset_bottom = 21.0
 text = "Enemies: 1"
 label_settings = SubResource("LabelSettings_0tnpc")
 horizontal_alignment = 2
 
 [node name="TimeScore" type="Label" parent="CanvasLayer/Control"]
 layout_mode = 0
-offset_left = 561.0
-offset_top = 12.0
-offset_right = 636.0
-offset_bottom = 32.0
+offset_left = 2.0
+offset_top = -2.0
+offset_right = 77.0
+offset_bottom = 18.0
 text = "Time:"
 label_settings = SubResource("LabelSettings_kvpfn")
+
+[node name="Score" type="Label" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 7.0
+offset_right = 78.0
+offset_bottom = 22.0
+scale = Vector2(1.0127122, 1)
+text = "Score:"
+label_settings = SubResource("LabelSettings_kvpfn")
+
+[node name="ScoreTracker" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("9_0tnpc")
+metadata/_edit_use_anchors_ = true
 
 [connection signal="end_game" from="Player" to="." method="_on_player_end_game"]
 [connection signal="timeout" from="EnemySpawnTimer" to="." method="_on_enemy_spawn_timer_timeout"]
