@@ -41,20 +41,54 @@ func shoot():
 
 
 func _physics_process(delta: float) -> void:
-	var rotation_input = Input.get_axis("turn_left", "turn_right")
-	rotation += rotation_input * rotation_speed * delta
-	var thrust_input = Input.get_axis("move_backward", "move_forward")
-	if thrust_input != 0:
-		var thrust_direction = Vector2.UP.rotated(rotation)
-		velocity += thrust_direction * thrust_input * thrust_power * delta
-	var strafe_input = Input.get_axis("move_left", "move_right")
-	if strafe_input != 0:
-		var strafe_direction = Vector2.RIGHT.rotated(rotation)
-		velocity += strafe_direction * strafe_input * thrust_power * delta
-	velocity *= drag
-	if velocity.length() > max_speed:
-		velocity = velocity.normalized() * max_speed
+	# Check for joystick input first
+	var joy_x = Input.get_axis("left_joy_left", "left_joy_right")
+	var joy_y = Input.get_axis("left_joy_up", "left_joy_down")
+	var joy_vector = Vector2(joy_x, joy_y)
+	
+	if joy_vector.length() > 0.1:  # Deadzone to avoid drift
+		# Joystick controls both direction and movement
+		var target_angle = joy_vector.angle() + PI/2  # +PI/2 to align sprite correctly
+		rotation = target_angle
+		
+		# Move in the direction of the joystick, scaled by joystick magnitude
+		var move_strength = min(joy_vector.length(), 1.0)  # Clamp to 1.0 max
+		velocity = joy_vector.normalized() * move_strength * max_speed
+	else:
+		# Fallback to keyboard controls if no joystick input
+		var rotation_input = Input.get_axis("turn_left", "turn_right")
+		rotation += rotation_input * rotation_speed * delta
+		
+		var thrust_input = Input.get_axis("move_backward", "move_forward")
+		if thrust_input != 0:
+			var thrust_direction = Vector2.UP.rotated(rotation)
+			velocity += thrust_direction * thrust_input * thrust_power * delta
+		
+		var strafe_input = Input.get_axis("move_left", "move_right")
+		if strafe_input != 0:
+			var strafe_direction = Vector2.RIGHT.rotated(rotation)
+			velocity += strafe_direction * strafe_input * thrust_power * delta
+		
+		velocity *= drag
+		if velocity.length() > max_speed:
+			velocity = velocity.normalized() * max_speed
+	
 	move_and_slide()
+	
+	#var rotation_input = Input.get_axis("turn_left", "turn_right")
+	#rotation += rotation_input * rotation_speed * delta
+	#var thrust_input = Input.get_axis("move_backward", "move_forward")
+	#if thrust_input != 0:
+	#	var thrust_direction = Vector2.UP.rotated(rotation)
+	#	velocity += thrust_direction * thrust_input * thrust_power * delta
+	#var strafe_input = Input.get_axis("move_left", "move_right")
+	#if strafe_input != 0:
+	#	var strafe_direction = Vector2.RIGHT.rotated(rotation)
+	#	velocity += strafe_direction * strafe_input * thrust_power * delta
+	#velocity *= drag
+	#if velocity.length() > max_speed:
+#		velocity = velocity.normalized() * max_speed
+#	move_and_slide()
 
 
 func _on_damage_module_no_hp() -> void:
