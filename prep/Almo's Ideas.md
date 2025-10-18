@@ -14,6 +14,8 @@ Sooner rather than later:
 - Strafing needs to be nerfed/adjusted so that it only lasts a short time/distance and then has a short cooldown (for example 1 second).
 - Shield regeneration needs to be nerfed/adjusted so that there is a small cooldown before it can start regenerating. You are currently basically impossible to kill. 
 - Add collision, so if you collide with the enemy they take damage and so do you. 
+- Shields need to recharge back to full capacity when broken before they can activate again. This should be combined with a unique colour for the shield bar when they are broken and recharging.
+- Certain projectiles like plasma blasts and bullets should have collision so they can destroy each other. 
 
 Can happen later:
 - Directional sprites
