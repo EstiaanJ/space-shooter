@@ -27,10 +27,10 @@ rotation_speed = 4.0
 drag = 0.9
 
 [node name="Camera2D" type="Camera2D" parent="."]
-limit_left = -1000
-limit_top = -1000
-limit_right = 1000
-limit_bottom = 1000
+limit_left = -900
+limit_top = -900
+limit_right = 900
+limit_bottom = 900
 limit_smoothed = true
 position_smoothing_speed = 50.0
 rotation_smoothing_speed = 50.0
@@ -74,15 +74,16 @@ Y:"
 label_settings = SubResource("LabelSettings_tuyoq")
 script = ExtResource("6_tuyoq")
 
-[node name="Rifle" parent="." instance=ExtResource("7_fjrip")]
+[node name="PlasmaCannon" parent="." instance=ExtResource("7_fjrip")]
 
-[node name="Weapon_Module" parent="Rifle" index="1"]
+[node name="Weapon_Module" parent="PlasmaCannon" index="1"]
 hp_damage_direct = 100.0
 projectile_speed = 400.0
 cd_time = 0.2
 projectile_scene = ExtResource("8_smehm")
 
 [node name="OffScreenDamage" type="CanvasModulate" parent="."]
+visible = false
 color = Color(0.99998266, 0.24512115, 0.18930459, 1)
 script = ExtResource("9_ur7pv")
 
@@ -93,4 +94,4 @@ script = ExtResource("9_ur7pv")
 [connection signal="no_hp" from="Damage_Module" to="." method="_on_damage_module_no_hp"]
 [connection signal="shield_hit" from="Damage_Module" to="." method="_on_damage_module_shield_hit"]
 
-[editable path="Rifle"]
+[editable path="PlasmaCannon"]

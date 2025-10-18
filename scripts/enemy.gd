@@ -3,7 +3,7 @@ class_name Enemy extends Area2D
 @export var speed = 150
 @export var start_health = 200
 
-@onready var rifle_wp_module = $Rifle
+@onready var rifle_wp_module = $PlasmaCannon
 
 var health = start_health
 #signal enemy_death_sig(location)

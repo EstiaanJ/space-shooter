@@ -15,10 +15,10 @@ collision_layer = 2
 collision_mask = 5
 script = ExtResource("1_md0e3")
 
-[node name="Rifle" parent="." instance=ExtResource("2_c4w8v")]
+[node name="PlasmaCannon" parent="." instance=ExtResource("2_c4w8v")]
 unique_name_in_owner = true
 
-[node name="Weapon_Module" parent="Rifle" index="1"]
+[node name="Weapon_Module" parent="PlasmaCannon" index="1"]
 hp_damage_direct = 33.0
 projectile_speed = 100.0
 cd_time = 1.4
@@ -38,4 +38,4 @@ team_value = "enemy_team"
 
 [connection signal="no_hp" from="Damage_Module" to="." method="_on_damage_module_no_hp"]
 
-[editable path="Rifle"]
+[editable path="PlasmaCannon"]

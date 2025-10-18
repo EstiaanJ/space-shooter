@@ -3,7 +3,7 @@ extends Node2D
 @export var enemy_scenes: Array[PackedScene] = []
 
 @onready var player_spawn_pos = $PlayerSpawnPos
-@onready var laser_container = $LaserContainer
+@onready var laser_container = $BulletContainer
 @onready var explosion_container = $ExplosionContainer
 @onready var timer = $EnemySpawnTimer
 @onready var enemy_container = $EnemyContainer
@@ -56,7 +56,7 @@ func update_player_health() -> void:
 func _on_enemy_spawn_timer_timeout() -> void:
 	#return
 	var e = enemy_scenes.pick_random().instantiate()
-	e.global_position = Vector2(randf_range(-1000,1000),randf_range(-1000,1000));
+	e.global_position = Vector2(randf_range(-900,900),randf_range(-900,900));
 	e.set_target(player)
 	enemy_container.add_child(e)
 

@@ -4,12 +4,12 @@ extends CharacterBody2D
 @export var thrust_power = 600.0  # Forward thrust strength
 @export var rotation_speed = 3.0  # How fast the ship rotates
 @export var max_speed = 200.0     # Maximum velocity
-@export var drag = 0.95            # Air resistance (0.95 = more drag, 0.99 = less drag)
+@export var drag = 0.95           # Air resistance (0.95 = more drag, 0.99 = less drag)
 
 @onready var muzzle = $Muzzle 
 @onready var shield_col = $ShieldCollider
 @onready var damage_module = $Damage_Module
-@onready var rifle_wp_module = $Rifle
+@onready var rifle_wp_module = $PlasmaCannon
 @onready var shield_rad = shield_col.shape.radius
 
 
@@ -99,7 +99,6 @@ func _on_damage_module_shield_hit() -> void:
 	var shield = shield_scene.instantiate()
 	add_child(shield)
 	
-
 
 func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
 	on_screen = false

@@ -73,7 +73,7 @@ position = Vector2(160, 129)
 [node name="PlayerSpawnPos" type="Marker2D" parent="."]
 position = Vector2(159, 162)
 
-[node name="LaserContainer" type="Node2D" parent="."]
+[node name="BulletContainer" type="Node2D" parent="."]
 
 [node name="ExplosionContainer" type="Node2D" parent="."]
 

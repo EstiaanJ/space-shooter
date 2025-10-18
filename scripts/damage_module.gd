@@ -12,7 +12,7 @@ class_name Damage_Module
 @onready var charge_timer = $ChargeTimer
 var plasma_hit = preload("res://scenes/plasma_hit.tscn")
 signal no_hp
-#signal damage_taken
+signal damage_taken
 signal shield_hit
 
 
