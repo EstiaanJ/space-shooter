@@ -2,7 +2,7 @@ All rights reserved.
 
 I do not consent to our code, images and other content in this repository or any repository controlled or owned by me to be used for the training of AI, machine learning, generative AI or LLMs
 
-By cloning this repository, or hosting it, you agree to the following terms:
+By cloning this repository or any part of it, or hosting it or any part of it, you agree to the following terms:
 1) You will not use any data herein for the purposes of training AI models.
 2) You will not use any data in or about this repository or data of or about the users who contribute to it for the purposes of targeted advertising.
 3) This agreement supersedes all other agreements.
