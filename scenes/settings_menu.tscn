@@ -1,0 +1,62 @@
+[gd_scene load_steps=3 format=3 uid="uid://bmco2sygc4f6w"]
+
+[ext_resource type="Theme" uid="uid://xruwplcb5mvh" path="res://themes/menu_theme.tres" id="1_cr101"]
+[ext_resource type="Script" uid="uid://7mqchray56wx" path="res://scripts/pause_menu.gd" id="2_wswnh"]
+
+[node name="SettingsMenu" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_cr101")
+script = ExtResource("2_wswnh")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.11764706, 0.11764706, 0.11764706, 0.3254902)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -208.0
+offset_top = -105.0
+offset_right = 208.0
+offset_bottom = 104.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Audio" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Abandon Run"
+
+[node name="Controls" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Resume Run"
+
+[node name="Display" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Restart Run"
+
+[node name="Back" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Settings"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Audio" to="." method="_on_abandon_run_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Controls" to="." method="_on_resume_run_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Display" to="." method="_on_restart_run_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Back" to="." method="_on_settings_pressed"]
