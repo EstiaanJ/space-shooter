@@ -15,10 +15,14 @@ extends Node2D
 @onready var time_score = $CanvasLayer/Control/TimeScore
 @onready var score_label = $CanvasLayer/Control/Score
 @onready var score_tracker = $ScoreTracker
+@onready var pause_menu = $CanvasLayer/PauseMenu
+@onready var paused = true
+
 var enemy_count = 0
 #var player = null
 
 func _ready():
+	pause_menu.hide()
 	player = get_tree().get_first_node_in_group("player")
 	assert(player != null)
 	player.global_position = player_spawn_pos.global_position
@@ -34,7 +38,24 @@ func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("quit"):
 		get_tree().quit()
 	elif Input.is_action_just_pressed("reset"):
-		get_tree().reload_current_scene()
+		pass
+	elif Input.is_action_just_pressed("pause"):
+		pauseMenu()
+
+func pauseMenu():
+	if paused:
+		pause_menu.show()
+		get_tree().paused = true
+	else:
+		pause_menu.hide()
+		get_tree().paused = false
+	paused = !paused
+	
+func restart_run():
+	get_tree().reload_current_scene()
+
+func quit_game():
+	get_tree().quit()
 
 func _on_player_laser_shot(laser_scene, location, direction):
 	var laser = laser_scene.instantiate()

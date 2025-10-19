@@ -93,12 +93,14 @@
             "id": "12ee5ce419d8a4d3",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "256pallet2.PNG"
+                "file": "TODO.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-image",
-              "title": "256pallet2"
+              "icon": "lucide-file",
+              "title": "TODO"
             }
           }
         ],
@@ -252,11 +254,12 @@
   },
   "active": "12ee5ce419d8a4d3",
   "lastOpenFiles": [
-    "256Pallet.png",
-    "256pallet2.PNG",
-    "Almo's Ideas.md",
-    "Ideas.md",
     "Weapons.md",
+    "TODO.md",
+    "Ideas.md",
+    "Almo's Ideas.md",
+    "256pallet2.PNG",
+    "256Pallet.png",
     "256pallet2.PNG.import",
     "256Pallet.png.import70051274390.tmp",
     "256Pallet.png~",
@@ -275,9 +278,7 @@
     "Enemyplasmashot1.PNG",
     "Limitations.md",
     "_Enemy_ Checkmate.md",
-    "TODO.md",
     "spacebg.bmp",
-    "pship.png",
-    "Plasmashot2.PNG"
+    "pship.png"
   ]
 }

@@ -1,9 +1,72 @@
-[gd_scene load_steps=0 format=3 uid="uid://bdglrxkfd6f7f"]
+[gd_scene load_steps=3 format=3 uid="uid://bdglrxkfd6f7f"]
 
-[node name="PauseMenu" type="Node2D"]
+[ext_resource type="Theme" uid="uid://xruwplcb5mvh" path="res://themes/menu_theme.tres" id="1_n87rw"]
+[ext_resource type="Script" uid="uid://7mqchray56wx" path="res://scripts/pause_menu.gd" id="2_myx47"]
 
-[node name="Control" type="Control" parent="."]
+[node name="PauseMenu" type="Control"]
+process_mode = 3
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_n87rw")
+script = ExtResource("2_myx47")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.11764706, 0.11764706, 0.11764706, 0.3254902)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -208.0
+offset_top = -105.0
+offset_right = 208.0
+offset_bottom = 104.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="ResumeRun" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Resume Run"
+
+[node name="RestartRun" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Restart Run"
+
+[node name="AbandonRun" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Abandon Run"
+
+[node name="Settings" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Settings"
+
+[node name="QuitToMainMenu" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Quit To Main Menu"
+
+[node name="QuitToDesktop" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Quit To Desktop"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ResumeRun" to="." method="_on_resume_run_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/RestartRun" to="." method="_on_restart_run_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/AbandonRun" to="." method="_on_abandon_run_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/QuitToMainMenu" to="." method="_on_quit_to_main_menu_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/QuitToDesktop" to="." method="_on_quit_to_desktop_pressed"]

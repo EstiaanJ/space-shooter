@@ -32,3 +32,7 @@
 
 ## Bugs
  - Enemies die instantly ✅
+ - Pause related
+	 - Timer keeps going after pause
+	 - Player sprite keeps rotating after pause
+	 - 

@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://xruwplcb5mvh"]
+
+[ext_resource type="FontFile" uid="uid://24ehjnfan3yf" path="res://assets/GelatinTTF.ttf" id="1_funo8"]
+
+[resource]
+default_font = ExtResource("1_funo8")
+default_font_size = 16
