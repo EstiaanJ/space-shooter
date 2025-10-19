@@ -30,18 +30,15 @@ func execute_damage(damage_module: Damage_Module) -> void:
 		score_tracker.add_score(score)
 	queue_free()
 
-
 func _on_area_entered(area: Area2D) -> void:
 	var tm = area.get_node("Team").team_value 
 	if tm != team:
 		execute_damage(area.get_node("Damage_Module"))
 
-
 func _on_body_entered(body: Node2D) -> void:
 	var tm = body.get_node("Team").team_value
 	if tm != team:
 		execute_damage(body.get_node("Damage_Module"))
-
 
 func _on_despawn_timer_timeout() -> void:
 	queue_free()

@@ -14,14 +14,11 @@ func _physics_process(delta: float) -> void:
 	global_position += direction * speed * delta
 	
 
-
-
 func _on_area_entered(area: Area2D) -> void:
 	var tm = area.get_node("Team").team_value 
 	if tm != team:
 		area.get_node("Damage_Module").damage(33,global_position)
 		queue_free()
-
 
 func _on_body_entered(body: Node2D) -> void:
 	print("HIT!")

@@ -20,15 +20,15 @@
 	- End logic
 - Scoring
 	- Score animation on hit
-	- Score tracking in script
-	- Score display
+	- Score tracking in script ✅
+	- Score display ✅
 - Pickups
 	- New items
 	- Current run boosts (HP etc)
 
 
 ## Cleanup & Maintenance
-- Convert plasma gun to gun module
+- Convert plasma gun to gun module ✅
 
 ## Bugs
- - Enemies die instantly 
+ - Enemies die instantly ✅
