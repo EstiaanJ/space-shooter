@@ -8,12 +8,12 @@ extends Node2D
 @onready var timer = $EnemySpawnTimer
 @onready var enemy_container = $EnemyContainer
 @onready var player = $Player
-@onready var hp_bar = $CanvasLayer/Control/HPBar
-@onready var sp_bar = $CanvasLayer/Control/SPBar
-@onready var ap_bar = $CanvasLayer/Control/APBar
-@onready var enemy_count_label = $CanvasLayer/Control/EnemyCnt
-@onready var time_score = $CanvasLayer/Control/TimeScore
-@onready var score_label = $CanvasLayer/Control/Score
+@onready var hp_bar = $CanvasLayer/HUD/HPBar
+@onready var sp_bar = $CanvasLayer/HUD/SPBar
+@onready var ap_bar = $CanvasLayer/HUD/APBar
+@onready var enemy_count_label = $CanvasLayer/HUD/EnemyCnt
+@onready var time_score = $CanvasLayer/HUD/TimeScore
+@onready var score_label = $CanvasLayer/HUD/Score
 @onready var score_tracker = $ScoreTracker
 @onready var pause_menu = $CanvasLayer/PauseMenu
 @onready var paused = true
@@ -75,6 +75,7 @@ func update_player_health() -> void:
 	var ap = player.get_node("Damage_Module").armour_points
 	var max_ap = player.get_node("Damage_Module").max_armour_points
 	ap_bar.value = (ap/max_ap)*100
+	
 
 
 func _on_enemy_spawn_timer_timeout() -> void:

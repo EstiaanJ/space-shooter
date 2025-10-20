@@ -1,0 +1,48 @@
+[gd_scene load_steps=3 format=3 uid="uid://c6adgwhcf2fp2"]
+
+[ext_resource type="FontFile" uid="uid://24ehjnfan3yf" path="res://assets/GelatinTTF.ttf" id="1_xvydj"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_5r1ea"]
+font = ExtResource("1_xvydj")
+
+[node name="InputButton" type="Button"]
+custom_minimum_size = Vector2(0, 24)
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 8.0
+grow_horizontal = 2
+focus_mode = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="LabelAction" type="Label" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+mouse_filter = 1
+text = "TEST"
+label_settings = SubResource("LabelSettings_5r1ea")
+vertical_alignment = 1
+
+[node name="Spacer" type="Control" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+
+[node name="LabelInput" type="Label" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+mouse_filter = 1
+text = "INPUT KEY"
+label_settings = SubResource("LabelSettings_5r1ea")
+vertical_alignment = 1

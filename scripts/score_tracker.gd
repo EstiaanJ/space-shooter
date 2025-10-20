@@ -1,4 +1,4 @@
-extends Control
+extends Node
 
 @onready var player_uuid = get_tree().root.get_node("Game/Player").uuid
 
