@@ -3,6 +3,8 @@ extends Control
 
 @onready var input_button_scene = preload("res://scenes/input_button.tscn")
 @onready var action_list = $PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/ActionList
+signal continue_game
+signal back
 
 var is_remapping = false 
 var action_to_remap = null
@@ -69,3 +71,11 @@ func _update_action_list(button, event):
 
 func _on_reset_button_pressed() -> void:
 	create_action_list()
+
+
+func _on_continue_game_pressed() -> void:
+	continue_game.emit()
+
+
+func _on_back_pressed() -> void:
+	back.emit()
