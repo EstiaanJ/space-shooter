@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bmco2sygc4f6w"]
 
 [ext_resource type="Theme" uid="uid://xruwplcb5mvh" path="res://themes/menu_theme.tres" id="1_cr101"]
-[ext_resource type="Script" uid="uid://7mqchray56wx" path="res://scripts/pause_menu.gd" id="2_wswnh"]
+[ext_resource type="Script" uid="uid://bjb5xljuan7gm" path="res://scenes/settings_menu.gd" id="2_cr101"]
 
 [node name="SettingsMenu" type="Control"]
 process_mode = 3
@@ -12,7 +12,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_cr101")
-script = ExtResource("2_wswnh")
+script = ExtResource("2_cr101")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -42,21 +42,18 @@ layout_mode = 2
 
 [node name="Audio" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Abandon Run"
+text = "Audio"
 
 [node name="Controls" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Resume Run"
+text = "Controls"
 
 [node name="Display" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Restart Run"
+text = "Display"
 
 [node name="Back" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Settings"
+text = "Back"
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Audio" to="." method="_on_abandon_run_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Controls" to="." method="_on_resume_run_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Display" to="." method="_on_restart_run_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Back" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Controls" to="." method="_on_controls_pressed"]

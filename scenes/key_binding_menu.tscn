@@ -67,4 +67,22 @@ focus_mode = 0
 theme = ExtResource("2_uatmg")
 text = "Reset To Default Bindings"
 
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Back" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Back"
+
+[node name="Apply" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+visible = false
+layout_mode = 2
+text = "Apply"
+
+[node name="ContinueGame" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Apply and Continue Game"
+
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/ResetButton" to="." method="_on_reset_button_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ContinueGame" to="." method="_on_continue_game_pressed"]

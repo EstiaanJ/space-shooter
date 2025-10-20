@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://bdglrxkfd6f7f"]
+[gd_scene load_steps=6 format=3 uid="uid://bdglrxkfd6f7f"]
 
 [ext_resource type="Theme" uid="uid://xruwplcb5mvh" path="res://themes/menu_theme.tres" id="1_n87rw"]
 [ext_resource type="Script" uid="uid://7mqchray56wx" path="res://scripts/pause_menu.gd" id="2_myx47"]
+[ext_resource type="PackedScene" uid="uid://htrmsdduyq0n" path="res://scenes/key_binding_menu.tscn" id="3_7l7mv"]
+[ext_resource type="PackedScene" uid="uid://bxhjugpjgl3ix" path="res://scenes/pause_menu_state.tscn" id="3_kukqi"]
+[ext_resource type="PackedScene" uid="uid://bmco2sygc4f6w" path="res://scenes/settings_menu.tscn" id="4_v4r4p"]
 
 [node name="PauseMenu" type="Control"]
 process_mode = 3
@@ -23,7 +26,17 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.11764706, 0.11764706, 0.11764706, 0.5568628)
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="InputSettings" parent="." instance=ExtResource("3_7l7mv")]
+visible = false
+layout_mode = 1
+
+[node name="SettingsMenu" parent="." instance=ExtResource("4_v4r4p")]
+visible = false
+layout_mode = 1
+
+[node name="PauseMenuState" parent="." instance=ExtResource("3_kukqi")]
+
+[node name="PauseMenuItems" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -37,36 +50,39 @@ offset_bottom = 74.75
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseMenuItems"]
 layout_mode = 2
 
-[node name="ResumeRun" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="ResumeRun" type="Button" parent="PauseMenuItems/VBoxContainer"]
 layout_mode = 2
 text = "Resume Run"
 
-[node name="RestartRun" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="RestartRun" type="Button" parent="PauseMenuItems/VBoxContainer"]
 layout_mode = 2
 text = "Restart Run"
 
-[node name="AbandonRun" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="AbandonRun" type="Button" parent="PauseMenuItems/VBoxContainer"]
 layout_mode = 2
 text = "Abandon Run"
 
-[node name="Settings" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="Settings" type="Button" parent="PauseMenuItems/VBoxContainer"]
 layout_mode = 2
 text = "Settings"
 
-[node name="QuitToMainMenu" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="QuitToMainMenu" type="Button" parent="PauseMenuItems/VBoxContainer"]
 layout_mode = 2
 text = "Quit To Main Menu"
 
-[node name="QuitToDesktop" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="QuitToDesktop" type="Button" parent="PauseMenuItems/VBoxContainer"]
 layout_mode = 2
 text = "Quit To Desktop"
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/ResumeRun" to="." method="_on_resume_run_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/RestartRun" to="." method="_on_restart_run_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/AbandonRun" to="." method="_on_abandon_run_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/QuitToMainMenu" to="." method="_on_quit_to_main_menu_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/QuitToDesktop" to="." method="_on_quit_to_desktop_pressed"]
+[connection signal="back" from="InputSettings" to="." method="_on_input_settings_back"]
+[connection signal="continue_game" from="InputSettings" to="." method="_on_input_settings_continue_game"]
+[connection signal="goto_controls_menu" from="SettingsMenu" to="." method="_on_settings_menu_goto_controls_menu"]
+[connection signal="pressed" from="PauseMenuItems/VBoxContainer/ResumeRun" to="." method="_on_resume_run_pressed"]
+[connection signal="pressed" from="PauseMenuItems/VBoxContainer/RestartRun" to="." method="_on_restart_run_pressed"]
+[connection signal="pressed" from="PauseMenuItems/VBoxContainer/AbandonRun" to="." method="_on_abandon_run_pressed"]
+[connection signal="pressed" from="PauseMenuItems/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="PauseMenuItems/VBoxContainer/QuitToMainMenu" to="." method="_on_quit_to_main_menu_pressed"]
+[connection signal="pressed" from="PauseMenuItems/VBoxContainer/QuitToDesktop" to="." method="_on_quit_to_desktop_pressed"]
