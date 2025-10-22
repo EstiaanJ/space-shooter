@@ -35,4 +35,9 @@
  - Pause related
 	 - Timer keeps going after pause
 	 - Player sprite keeps rotating after pause
-	 - 
+
+- Timer related
+	- Timer keeps going after pause
+	- Timer doesn't reset
+	- Timer is based on total time since game started, this is just wrong
+		- Need a unique timer for in-run time that can be paused and reset

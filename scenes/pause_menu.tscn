@@ -24,7 +24,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.11764706, 0.11764706, 0.11764706, 0.5568628)
+color = Color(0.27058825, 0.27058825, 0.27058825, 1)
 
 [node name="InputSettings" parent="." instance=ExtResource("3_7l7mv")]
 visible = false
@@ -79,6 +79,7 @@ text = "Quit To Desktop"
 
 [connection signal="back" from="InputSettings" to="." method="_on_input_settings_back"]
 [connection signal="continue_game" from="InputSettings" to="." method="_on_input_settings_continue_game"]
+[connection signal="back" from="SettingsMenu" to="." method="_on_settings_menu_back"]
 [connection signal="goto_controls_menu" from="SettingsMenu" to="." method="_on_settings_menu_goto_controls_menu"]
 [connection signal="pressed" from="PauseMenuItems/VBoxContainer/ResumeRun" to="." method="_on_resume_run_pressed"]
 [connection signal="pressed" from="PauseMenuItems/VBoxContainer/RestartRun" to="." method="_on_restart_run_pressed"]

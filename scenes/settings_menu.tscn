@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bmco2sygc4f6w"]
 
 [ext_resource type="Theme" uid="uid://xruwplcb5mvh" path="res://themes/menu_theme.tres" id="1_cr101"]
-[ext_resource type="Script" uid="uid://bjb5xljuan7gm" path="res://scenes/settings_menu.gd" id="2_cr101"]
+[ext_resource type="Script" uid="uid://bjb5xljuan7gm" path="res://scripts/settings_menu.gd" id="2_cr101"]
 
 [node name="SettingsMenu" type="Control"]
 process_mode = 3
@@ -21,7 +21,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.11764706, 0.11764706, 0.11764706, 0.3254902)
+color = Color(0.27022192, 0.27022192, 0.27022186, 1)
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -48,12 +48,27 @@ text = "Audio"
 layout_mode = 2
 text = "Controls"
 
-[node name="Display" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="Display" type="OptionButton" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Display"
+selected = 0
+item_count = 6
+popup/item_0/text = "Resolution: 720p Windowed"
+popup/item_0/id = 0
+popup/item_1/text = "Resolution: 720p Full"
+popup/item_1/id = 1
+popup/item_2/text = "Resolution: 1080p Windowed"
+popup/item_2/id = 2
+popup/item_3/text = "Resolution: 1080p Full"
+popup/item_3/id = 3
+popup/item_4/text = "Resolution: 1440p Windowed"
+popup/item_4/id = 4
+popup/item_5/text = "Resolution: 1440p Full"
+popup/item_5/id = 5
 
 [node name="Back" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Back"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Controls" to="." method="_on_controls_pressed"]
+[connection signal="item_selected" from="MarginContainer/VBoxContainer/Display" to="." method="_on_display_item_selected"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Back" to="." method="_on_back_pressed"]

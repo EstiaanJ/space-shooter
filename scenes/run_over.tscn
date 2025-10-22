@@ -1,0 +1,91 @@
+[gd_scene load_steps=6 format=3 uid="uid://dh78ku84aii2e"]
+
+[ext_resource type="FontFile" uid="uid://24ehjnfan3yf" path="res://assets/GelatinTTF.ttf" id="1_etp3u"]
+[ext_resource type="Script" uid="uid://eimct6vaj0xb" path="res://scripts/run_over.gd" id="1_ktivj"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ktivj"]
+font = ExtResource("1_etp3u")
+font_size = 64
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="LabelSettings" id="LabelSettings_y85dq"]
+font = ExtResource("1_etp3u")
+
+[sub_resource type="Theme" id="Theme_etp3u"]
+default_font = ExtResource("1_etp3u")
+default_font_size = 16
+
+[node name="RunOver" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ktivj")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.35906908, 0.35906908, 0.35906908, 1)
+
+[node name="Content" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -190.0
+offset_top = -177.0
+offset_right = 190.0
+offset_bottom = 34.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GameOverText" type="Label" parent="Content"]
+layout_mode = 2
+text = "Game Over"
+label_settings = SubResource("LabelSettings_ktivj")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GameOverText2" type="Label" parent="Content"]
+custom_minimum_size = Vector2(180, 32)
+layout_mode = 2
+text = "Your ship is too damaged to continue on. In your last concious moments, mere microseconds before annihlation, your ship performed an automatic emergency warp procedure. You awake, finding yourself back on the carrier ship, alive to fight another day."
+label_settings = SubResource("LabelSettings_y85dq")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="GameOverText3" type="Label" parent="Content"]
+custom_minimum_size = Vector2(180, 32)
+layout_mode = 2
+text = "Run Stats:"
+label_settings = SubResource("LabelSettings_y85dq")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="RunStats" type="Label" parent="Content"]
+custom_minimum_size = Vector2(180, 32)
+layout_mode = 2
+label_settings = SubResource("LabelSettings_y85dq")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="ContinueButton" type="Button" parent="Content"]
+custom_minimum_size = Vector2(50, 18)
+layout_mode = 2
+theme = SubResource("Theme_etp3u")
+text = "Continue"
+
+[connection signal="pressed" from="Content/ContinueButton" to="." method="_on_continue_button_pressed"]

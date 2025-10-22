@@ -16,6 +16,8 @@ extends Node2D
 @onready var score_label = $CanvasLayer/HUD/Score
 @onready var score_tracker = $ScoreTracker
 @onready var pause_menu = $CanvasLayer/PauseMenu
+@onready var hud = $CanvasLayer/HUD
+@onready var run_over_screen = $CanvasLayer/RunOver
 @onready var paused = true
 
 var enemy_count = 0
@@ -89,6 +91,13 @@ func _on_enemy_spawn_timer_timeout() -> void:
 func _on_player_end_game() -> void:
 	var death_time = Time.get_ticks_msec()
 	time_score = death_time
-	enemy_count = "Game Over"
+	run_over_screen.get_node("Content/RunStats").text = "Score: " + str(score_tracker.score) + "\nTime: " + str(death_time) + "\nNo. of Enemies Remaining: " + str(enemy_count)
+	run_over_screen.show()
 	get_tree().paused = true
 	#get_tree().reload_current_scene()
+
+
+func _on_run_over_continue_on() -> void:
+	get_tree().paused = false
+	get_tree().change_scene_to_file("res://scenes/carrier_hanger.tscn")
+	

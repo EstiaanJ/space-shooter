@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://ir8qge0ul3d6"]
+[gd_scene load_steps=27 format=3 uid="uid://ir8qge0ul3d6"]
 
 [ext_resource type="Script" uid="uid://cswo5es3jamcd" path="res://scripts/game.gd" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://b6culji4mri" path="res://scenes/player.tscn" id="2_yqjtg"]
@@ -12,6 +12,7 @@
 [ext_resource type="Script" uid="uid://cgdcsswbvo335" path="res://scripts/score_tracker.gd" id="9_0tnpc"]
 [ext_resource type="Theme" uid="uid://xruwplcb5mvh" path="res://themes/menu_theme.tres" id="10_dinhu"]
 [ext_resource type="PackedScene" uid="uid://bdglrxkfd6f7f" path="res://scenes/pause_menu.tscn" id="10_vtaks"]
+[ext_resource type="PackedScene" uid="uid://dh78ku84aii2e" path="res://scenes/run_over.tscn" id="12_kvuet"]
 
 [sub_resource type="Theme" id="Theme_lbhrr"]
 default_font = ExtResource("5_iywne")
@@ -223,6 +224,10 @@ theme = ExtResource("10_dinhu")
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("10_vtaks")]
 visible = false
 
+[node name="RunOver" parent="CanvasLayer" instance=ExtResource("12_kvuet")]
+process_mode = 3
+visible = false
+
 [node name="ScoreTracker" type="Node" parent="."]
 script = ExtResource("9_0tnpc")
 metadata/_edit_use_anchors_ = true
@@ -230,3 +235,4 @@ metadata/_edit_use_anchors_ = true
 [connection signal="end_game" from="Player" to="." method="_on_player_end_game"]
 [connection signal="timeout" from="EnemySpawnTimer" to="." method="_on_enemy_spawn_timer_timeout"]
 [connection signal="timeout" from="EnemySpawnTimer" to="EnemySpawnTimer" method="_on_timeout"]
+[connection signal="continue_on" from="CanvasLayer/RunOver" to="." method="_on_run_over_continue_on"]

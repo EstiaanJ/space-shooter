@@ -35,8 +35,11 @@ func _on_settings_menu_goto_controls_menu() -> void:
 	menu_state.push_menu($InputSettings)
 
 
-func _on_input_settings_back() -> void:
+#func back_a_level():
 	
+	
+
+func _on_input_settings_back() -> void:
 	menu_state.pop_menu()
 
 
@@ -45,3 +48,8 @@ func _on_input_settings_continue_game() -> void:
 	$SettingsMenu.hide()
 	$PauseMenuItems.show()
 	menu_state.reset_menu()
+
+
+func _on_settings_menu_back() -> void:
+	pause_menu_items.show()
+	menu_state.pop_menu()
